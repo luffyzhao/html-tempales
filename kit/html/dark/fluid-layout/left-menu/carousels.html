@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
+<!--[if !IE]><!--><html><!-- <![endif]-->
+<head>
+	<title>AdminKIT - Premium Admin Template (v1.5)</title>
+	
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- Bootstrap -->
+	<link href="../../../../common/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="../../../../common/bootstrap/css/responsive.css" rel="stylesheet" />
+	
+	<!-- Glyphicons Font Icons -->
+	<link href="../../../../common/theme/css/glyphicons.css" rel="stylesheet" />
+	
+	<!-- Uniform Pretty Checkboxes -->
+	<link href="../../../../common/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
+	
+	<!-- PrettyPhoto -->
+    <link href="../../../../common/theme/scripts/plugins/gallery/prettyphoto/css/prettyPhoto.css" rel="stylesheet" />
+	
+	<!-- Bootstrap Extended -->
+	<link href="../../../../common/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+	<link href="../../../../common/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../../../../common/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
+	<link href="../../../../common/bootstrap/extend/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+	<link href="../../../../common/bootstrap/extend/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css" rel="stylesheet" />
+	
+	<!-- Select2 Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/forms/select2/select2.css" rel="stylesheet" />
+	
+	<!-- DateTimePicker Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/forms/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+	
+	<!-- JQueryUI -->
+	<link href="../../../../common/theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+	
+	<!-- MiniColors ColorPicker Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css" rel="stylesheet" />
+	
+	<!-- Notyfy Notifications Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.css" rel="stylesheet" />
+	<link href="../../../../common/theme/scripts/plugins/notifications/notyfy/themes/default.css" rel="stylesheet" />
+	
+	<!-- Gritter Notifications Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/notifications/Gritter/css/jquery.gritter.css" rel="stylesheet" />
+	
+	<!-- Easy-pie Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.css" rel="stylesheet" />
+
+	<!-- Google Code Prettify Plugin -->
+	<link href="../../../../common/theme/scripts/plugins/other/google-code-prettify/prettify.css" rel="stylesheet" />
+
+	<!-- Main Theme Stylesheet :: CSS -->
+	<link href="../../../../common/theme/css/style-dark.css?1369414384" rel="stylesheet" />
+	
+	
+	<!-- LESS.js Library -->
+	<script src="../../../../common/theme/scripts/plugins/system/less.min.js"></script>
+</head>
+<body class="">
+	
+		<!-- Main Container Fluid -->
+	<div class="container-fluid fluid menu-left">
+		
+		<!-- Top navbar -->
+		<div class="navbar main hidden-print">
+		
+			<!-- Brand -->
+			<a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="appbrand pull-left"><span>AdminKIT <span>v1.5</span></span></a>
+			
+						<!-- Menu Toggle Button -->
+			<button type="button" class="btn btn-navbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+			<!-- // Menu Toggle Button END -->
+						
+						<!-- Top Menu -->
+			<ul class="topnav pull-left tn1">
+			
+								<!-- Themer -->
+				<li class="hidden-phone">
+					<a href="#" data-target="#themer" data-toggle="collapse" class="glyphicons eyedropper"><i></i><span>Themer</span></a>
+				</li>
+				<!-- // Themer END -->
+								
+								
+			</ul>
+			<!-- // Top Menu END -->
+						
+						
+			<!-- Top Menu Right -->
+			<ul class="topnav pull-right">
+			
+				<!-- Language menu -->
+				<li class="hidden-phone" id="lang_nav">
+					<a href="#" data-toggle="dropdown"><img src="../../../../common/theme/images/lang/en.png" alt="en" /></a>
+			    	<ul class="dropdown-menu pull-left">
+			      		<li class="active"><a href="?page=carousels&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark&amp;lang=en" title="English"><img src="../../../../common/theme/images/lang/en.png" alt="English"> English</a></li>
+			      		<li><a href="?page=carousels&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark&amp;lang=ro" title="Romanian"><img src="../../../../common/theme/images/lang/ro.png" alt="Romanian"> Romanian</a></li>
+			      		<li><a href="?page=carousels&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark&amp;lang=it" title="Italian"><img src="../../../../common/theme/images/lang/it.png" alt="Italian"> Italian</a></li>
+			      		<li><a href="?page=carousels&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark&amp;lang=fr" title="French"><img src="../../../../common/theme/images/lang/fr.png" alt="French"> French</a></li>
+			      		<li><a href="?page=carousels&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark&amp;lang=pl" title="Polish"><img src="../../../../common/theme/images/lang/pl.png" alt="Polish"> Polish</a></li>
+			    	</ul>
+				</li>
+				<!-- // Language menu END -->
+			
+				<!-- Dropdown -->
+				<li class="dropdown visible-abc">
+					<a href="" data-toggle="dropdown" class="glyphicons cogwheel"><i></i>Dropdown <span class="caret"></span></a>
+					<ul class="dropdown-menu pull-right">
+						
+						<li class="dropdown submenu">
+                    		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2</a>
+							<ul class="dropdown-menu submenu-show submenu-hide pull-left">
+		                        <li class="dropdown submenu">
+		                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.1</a>
+									<ul class="dropdown-menu submenu-show submenu-hide pull-left">
+										<li><a href="#">Level 2.1.1</a></li>
+                                    	<li><a href="#">Level 2.1.2</a></li>
+                                    	<li><a href="#">Level 2.1.3</a></li>
+                                    	<li><a href="#">Level 2.1.4</a></li>
+		                            </ul>
+		                        </li>
+		                        <li class="dropdown submenu">
+		                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.2</a>
+		                            <ul class="dropdown-menu submenu-show submenu-hide pull-left">
+										<li><a href="#">Level 2.2.1</a></li>
+		                                <li><a href="#">Level 2.2.2</a></li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                
+		                <li><a href="">Some option</a></li>
+						<li><a href="">Some other option</a></li>
+						<li><a href="">Other option</a></li>
+		                
+					</ul>
+				</li>
+				<!-- // Dropdown END -->
+				
+				<!-- Profile / Logout menu -->
+				<li class="account">
+										<a data-toggle="dropdown" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons logout lock"><span class="hidden-phone text">mosaicpro</span><i></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons cogwheel">Settings<i></i></a></li>
+						<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons camera">My Photos<i></i></a></li>
+						<li class="highlight profile">
+							<span>
+								<span class="heading">Profile <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="pull-right">edit</a></span>
+								<span class="img"></span>
+								<span class="details">
+									<a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Mosaic Pro</a>
+									contact@mosaicpro.biz
+								</span>
+								<span class="clearfix"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<a class="btn btn-default btn-mini pull-right" href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Sign Out</a>
+							</span>
+						</li>
+					</ul>
+									</li>
+				<!-- // Profile / Logout menu END -->
+				
+			</ul>
+			<!-- // Top Menu Right END -->
+			
+						
+		</div>
+		<!-- Top navbar END -->
+		
+				<!-- Sidebar menu & content wrapper -->
+		<div id="wrapper">
+		
+		<!-- Sidebar Menu -->
+		<div id="menu" class="hidden-phone hidden-print">
+		
+			<!-- Scrollable menu wrapper with Maximum height -->
+			<div class="slim-scroll" data-scroll-height="800px">
+			
+			<!-- Sidebar Profile -->
+			<span class="profile">
+				<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><img src="http://dummyimage.com/51x51/232323/ffffff&amp;text=photo" alt="Mr. Awesome" /></a>
+				<span>
+					<strong>Welcome</strong>
+					<a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons right_arrow">mosaicpro <i></i></a>
+				</span>
+			</span>
+			<!-- // Sidebar Profile END -->
+			
+			<!-- Sidebar Mini Stats -->
+			<div id="notif">
+				<ul>
+					<li><a href="" class="glyphicons envelope"><i></i> 5</a></li>
+					<li><a href="" class="glyphicons shopping_cart"><i></i> 1</a></li>
+					<li><a href="" class="glyphicons log_book"><i></i> 3</a></li>
+					<li><a href="" class="glyphicons user_add"><i></i> 14</a></li>
+				</ul>
+			</div>
+			<!-- // Sidebar Mini Stats END -->
+			
+			<!-- Regular Size Menu -->
+			<ul>
+			
+								
+								<!-- Menu Regular Item -->
+				<li class="glyphicons display"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><i></i><span>Dashboard</span></a></li>
+				
+				<!-- Components Submenu Level 1 -->
+				<li class="hasSubmenu glyphicons cogwheels active">
+					<a data-toggle="collapse" href="#menu_components"><i></i><span>Components</span></a>
+					<ul class="collapse in" id="menu_components">
+						
+						<!-- Components Submenu Level 2 -->
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_forms"><span>Forms</span></a>
+							<ul class="collapse" id="menu_forms">
+								<li class=""><a href="form_wizards.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Form Wizards</span></a></li>
+								<li class=""><a href="form_elements.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Form Elements</span></a></li>
+								<li class=""><a href="form_validator.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Form Validator</span></a></li>
+								<li class=""><a href="file_managers.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>File Managers</span></a></li>
+							</ul>
+							<span class="count">4</span>
+						</li>
+						<!-- // Components Submenu Level 2 END -->
+						
+						<!-- Components Submenu Regular Items -->
+						<li class=""><a href="ui.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>UI Elements</span></a></li>
+						<li class=""><a href="icons.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Icons</span></a></li>
+						<li class=""><a href="widgets.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Widgets</span></a></li>
+						<li class=""><a href="tabs.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Tabs</span></a></li>
+						<li class=""><a href="sliders.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Sliders</span></a></li>
+						<li class=""><a href="charts.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Charts</span></a></li>
+						<!-- // Components Submenu Regular Items END -->
+						
+						<!-- Components Submenu Level 2 -->
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_tables"><span>Tables</span></a>
+							<ul class="collapse" id="menu_tables">
+								<li class=""><a href="tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Tables</span></a></li>
+								<li class=""><a href="pricing_tables.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Pricing tables</span></a></li>
+							</ul>
+							<span class="count">2</span>
+						</li>
+						<!-- // Components Submenu Level 2 -->
+						
+						<!-- Components Submenu Regular Items -->
+						<li class=""><a href="grid.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Grid system</span></a></li>
+						<li class=""><a href="notifications.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Notifications</span></a></li>
+						<li class=""><a href="modals.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Modals</span></a></li>
+						<li class=""><a href="thumbnails.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Thumbnails</span></a></li>
+						<li class=" active"><a href="carousels.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Carousels</span></a></li>
+						<li class=""><a href="tour.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Page Tour</span></a></li>
+						<!-- // Components Submenu Regular Items END -->
+						
+					</ul>
+					<span class="count">18</span>
+				</li>
+				<!-- Components Submenu Level 1 END -->
+				
+				<!-- Landing Submenu Level 1 -->
+				<li class="hasSubmenu">
+					<a data-toggle="collapse" class="glyphicons notes" href="#menu_landing"><i></i><span>Landing pages</span></a>
+					<ul class="collapse" id="menu_landing">
+						<li class=""><a href="landing_page_1.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Landing #1</span></a></li>
+						<li class=""><a href="landing_page_2.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Landing #2</span></a></li>
+					</ul>
+					<span class="count">2</span>
+				</li>
+				<!-- // Gallery Submenu Level 1 END -->
+				
+				<!-- Extra Submenu Level 1 -->
+				<li class="hasSubmenu glyphicons gift">
+					<a data-toggle="collapse" href="#menu_extra"><i></i><span>Extra</span></a>
+					<ul class="collapse" id="menu_extra">
+						<li class=""><a href="my_account_advanced.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Advanced profile</span></a></li>
+						<li class=""><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>My Account</span></a></li>
+						<li class=""><a href="bookings.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Bookings</span></a></li>
+						<li class=""><a href="finances.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Finances</span></a></li>
+						<li class=""><a href="pages.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Site Pages</span></a></li>
+						<li><a href="error.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Error page</span></a></li>
+						<li><a href="blank.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Blank page</span></a></li>
+					</ul>
+					<span class="count">7</span>
+				</li>
+				<!-- // Extra Submenu Level 1 END -->
+				
+				<!-- Gallery Submenu Level 1 -->
+				<li class="hasSubmenu">
+					<a data-toggle="collapse" class="glyphicons picture" href="#menu_gallery"><i></i><span>Photo Gallery</span></a>
+					<ul class="collapse" id="menu_gallery">
+						<li class=""><a href="gallery_1.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Gallery #1</span></a></li>
+						<li class=""><a href="gallery_2.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Gallery #2</span></a></li>
+						<li class=""><a href="videos.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Videos</span></a></li>
+					</ul>
+					<span class="count">2</span>
+				</li>
+				<!-- // Gallery Submenu Level 1 END -->
+				
+				<!-- Shop Submenu Level 1 -->
+				<li class="hasSubmenu">
+					<a data-toggle="collapse" class="glyphicons shopping_cart" href="#menu_ecommerce"><i></i><span>Online Shop</span></a>
+					<ul class="collapse" id="menu_ecommerce">
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_ecommerce_client"><i></i><span>Client interface</span></a>
+							<ul class="collapse" id="menu_ecommerce_client">
+								<li class=""><a href="shop_client_products.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Products</span></a></li>
+								<li class=""><a href="shop_client_product.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Product details</span></a></li>
+								<li class=""><a href="shop_client_cart.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Shopping cart</span></a></li>
+							</ul>
+							<span class="count">3</span>
+						</li>
+						<li class="hasSubmenu">
+							<a data-toggle="collapse" href="#menu_ecommerce_admin"><i></i><span>Management</span></a>
+							<ul class="collapse" id="menu_ecommerce_admin">
+								<li class=""><a href="shop_admin_products.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Products</span></a></li>
+								<li class=""><a href="shop_admin_product.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Add product</span></a></li>
+							</ul>
+							<span class="count">2</span>
+						</li>
+					</ul>
+					<span class="count">5</span>
+				</li>
+				<!-- // Shop Submenu Level 1 END -->
+				
+				<!-- Menu Regular Items -->
+				<li class="glyphicons tags"><a href="faq.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><i></i><span>FAQ</span></a></li>
+				<li class="glyphicons calendar"><a href="calendar.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><i></i><span>Calendar</span></a></li>
+				<li class="glyphicons lock"><a href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><i></i><span>Login</span></a></li>
+				<li class="glyphicons user_add"><a href="signup.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><i></i><span>Register</span></a></li>
+				<li class="glyphicons credit_card"><a href="invoice.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><i></i><span>Invoice</span></a></li>
+				<!-- // Menu Regular Items END -->
+				
+				<!-- Maps Submenu Level 1 -->
+				<li class="hasSubmenu glyphicons google_maps">
+					<a data-toggle="collapse" href="#menu_maps"><i></i><span>Maps</span></a>
+					<ul class="collapse" id="menu_maps">
+						<li class=""><a href="maps_vector.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Vector maps</span></a></li>
+						<li class=""><a href="maps_google.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Google maps</span></a></li>
+					</ul>
+					<span class="count">2</span>
+				</li>
+				<!-- // Maps Submenu Level 1 END -->
+								
+			</ul>
+			<div class="clearfix"></div>
+			<div class="separator bottom"></div>
+			<!-- // Regular Size Menu END -->
+			
+						<!-- Sidebar Stats Widgets -->
+			<div class="widget-sidebar-stats">
+				<strong>3,540</strong>
+				<span>Messages</span>
+				<span class="pull-right sparkline"></span>
+				<div class="clearfix"></div>
+			</div>
+			<div class="widget-sidebar-stats">
+				<strong>2,510,402</strong>
+				<span>Photos</span>
+				<span class="pull-right sparkline"></span>
+				<div class="clearfix"></div>
+			</div>
+			<div class="separator bottom"></div>
+			<!-- // Sidebar Stats Widgets END -->
+			
+			<!-- Stats Widget -->
+			<a href="" class="widget-stats widget-stats-2 widget-stats-easy-pie widget-sidebar-stats txt-single">
+				<div data-percent="90" class="easy-pie primary"><span class="value">90</span>%</div>
+				<span class="txt">Completed tasks</span>
+				<div class="clearfix"></div>
+			</a>
+			<!-- // Stats Widget END -->
+			
+			<!-- Stats Widget -->
+			<a href="" class="widget-stats widget-stats-2 widget-stats-3 widget-sidebar-stats black margin-bottom-none">
+				<span class="sparkline success"></span>
+				<span class="txt"><span class="count">12,566</span> Photos</span>
+				<div class="clearfix"></div>
+			</a>
+			<div class="separator bottom"></div>
+			<!-- // Stats Widget END -->
+			
+			<!-- Larger Menu Style -->
+			<ul>
+				<li class="heading"><span>Larger menu</span></li>
+				<li class="large glyphicons group"><a href="error.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><i></i><span>Clients</span></a></li>
+				<li class="large hasSubmenu glyphicons log_book">
+					<a data-toggle="collapse" href="#menu_tasks"><i></i><span>Task Management</span></a>
+					<ul class="collapse" id="menu_tasks">
+						<li class=""><a href="tasks.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Tasks Overview</span></a></li>
+						<li class=""><a href="error.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Manage Projects</span></a></li>
+						<li class=""><a href="error.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><span>Manage Team</span></a></li>
+					</ul>
+					<span class="count">3</span>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+			<!-- // Larger Menu Style END -->
+			
+			<!-- Sidebar Stats Widgets -->
+			<div class="separator bottom"></div>
+			<div class="widget-sidebar-stats">
+				<span>HDD <strong class="pull-right">80% used</strong></span>
+				<div class="progress progress-danger">
+					<div class="bar" style="width: 80%;"></div>
+				</div>
+				<div class="clearfix"></div>
+			
+			</div>
+			<div class="widget-sidebar-stats">
+				<span>Mail <strong class="pull-right">65% used</strong></span>
+				<div class="progress progress-success">
+					<div class="bar" style="width: 65%;"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="widget-sidebar-stats">
+				<h5>Generic widget</h5>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</div>
+			<!-- // Sidebar Stats Widgets END -->
+						
+						
+						
+			</div>
+			<!-- // Scrollable Menu wrapper with Maximum Height END -->
+			
+		</div>
+		<!-- // Sidebar Menu END -->
+				
+		<!-- Content -->
+		<div id="content">
+	<!-- Breadcrumb -->
+<ul class="breadcrumb">
+	<li><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons home"><i></i> AdminKIT</a></li>
+	<li class="divider"></li>
+	<li>Carousels</li>
+</ul>
+<div class="separator bottom"></div>
+<!-- // Breadcrumb END -->
+
+<h3>Carousels <span>Component for cycling through elements</span></h3>
+<div class="innerLR">
+
+	<!-- Row -->
+	<div class="row-fluid">
+	
+		<!-- Column -->
+		<div class="span6">
+		
+			<!-- Carousel -->
+			<div id="carousel-1" class="carousel slide">
+			
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-1" data-slide-to="1"></li>
+					<li data-target="#carousel-1" data-slide-to="2"></li>
+					<li data-target="#carousel-1" data-slide-to="3"></li>
+					<li data-target="#carousel-1" data-slide-to="4"></li>
+					<li data-target="#carousel-1" data-slide-to="5"></li>
+				</ol>
+				<!-- // Indicators END -->
+				
+				<!-- Items -->
+				<div class="carousel-inner">
+				
+										<!-- Item -->
+					<div class="item active">
+						<img src="../../../../common/theme/images/gallery-2/1.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/2.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/3.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/4.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/5.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										
+				</div>
+				<!-- // Items END -->
+				
+				<!-- Navigation -->
+				<a class="left carousel-control" href="#carousel-1" data-slide="prev">&lsaquo;</a>
+				<a class="right carousel-control" href="#carousel-1" data-slide="next">&rsaquo;</a>
+				<!-- // Navigation END -->
+				
+			</div>
+			<!-- // Carousel END -->
+		
+		</div>
+		<!-- // Column END -->
+		
+		<!-- Column -->
+		<div class="span6">
+			
+			<!-- Carousel -->
+			<div id="carousel-2" class="carousel slide">
+			
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-2" data-slide-to="1"></li>
+					<li data-target="#carousel-2" data-slide-to="2"></li>
+					<li data-target="#carousel-2" data-slide-to="3"></li>
+					<li data-target="#carousel-2" data-slide-to="4"></li>
+					<li data-target="#carousel-2" data-slide-to="5"></li>
+				</ol>
+				<!-- // Indicators END -->
+				
+				<!-- Items -->
+				<div class="carousel-inner">
+				
+										<!-- Item -->
+					<div class="item active">
+						<img src="../../../../common/theme/images/gallery-2/10.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+								Donec id elit non mi porta gravida at eget metus. Nullam id dolor
+								id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/11.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+								Donec id elit non mi porta gravida at eget metus. Nullam id dolor
+								id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/12.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+								Donec id elit non mi porta gravida at eget metus. Nullam id dolor
+								id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/13.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+								Donec id elit non mi porta gravida at eget metus. Nullam id dolor
+								id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/14.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+								Donec id elit non mi porta gravida at eget metus. Nullam id dolor
+								id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										<!-- Item -->
+					<div class="item">
+						<img src="../../../../common/theme/images/gallery-2/15.jpg" alt="" />
+						<div class="carousel-caption">
+							<h4>Thumbnail heading</h4>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+								Donec id elit non mi porta gravida at eget metus. Nullam id dolor
+								id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</div>
+					<!-- // Item END -->
+										
+				</div>
+				<!-- // Items END -->
+				
+				<!-- Navigation -->
+				<a class="left carousel-control" href="#carousel-2" data-slide="prev">&lsaquo;</a>
+				<a class="right carousel-control" href="#carousel-2" data-slide="next">&rsaquo;</a>
+				<!-- // Navigation END -->
+				
+			</div>
+			<!-- // Carousel END -->
+			
+		</div>
+		<!-- // Column END -->
+		
+	</div>
+	<!-- // Row END -->
+	
+<!-- Code sample -->
+<pre class="prettyprint margin-none">
+&lt;div id="myCarousel" class="carousel slide"&gt;
+  &lt;ol class="carousel-indicators"&gt;
+    &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+    &lt;li data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+    &lt;li data-target="#myCarousel" data-slide-to="2"&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;!-- Carousel items --&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="active item"&gt;...&lt;/div&gt;
+    &lt;div class="item"&gt;...&lt;/div&gt;
+    &lt;div class="item"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Carousel nav --&gt;
+  &lt;a class="carousel-control left" href="#myCarousel" data-slide="prev"&gt;&lsaquo;&lt;/a&gt;
+  &lt;a class="carousel-control right" href="#myCarousel" data-slide="next"&gt;&rsaquo;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+<!-- // Code sample END -->
+
+</div>	
+		
+		</div>
+		<!-- // Content END -->
+			
+				</div>
+		<div class="clearfix"></div>
+		<!-- // Sidebar menu & content wrapper END -->
+				
+		<div id="footer" class="hidden-print">
+			
+			<div class="row-fluid">
+				<div class="span8">
+					<div class="row-fluid row-menu">
+						<div class="span3">
+							<ul class="unstyled">
+								<li><h4>Get Help</h4>
+									<ul class="unstyled">
+										<li><a href="documentation.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Documentation</a></li>
+										<li><a href="">Aenean augue risus</a></li>
+										<li><a href="">Maecenas erat dui</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="span3">
+							<ul class="unstyled">
+								<li><h4>My account</h4>
+									<ul class="unstyled">
+										<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Edit account</a></li>
+										<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Change password</a></li>
+										<li><a href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Logout</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="span3">
+							<ul class="unstyled">
+								<li><h4>Other Settings</h4>
+									<ul class="unstyled">
+										<li><a href="">Etiam viverra pharetra</a></li>
+										<li><a href="">Lorem ipsum dolor</a></li>
+										<li><a href="">Consecteur adipiscing</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="span3">
+						
+														<!-- Twitter Section -->
+							<h5 class="glyphicons single twitter"><i></i> Latest from Twitter</h5>
+							<section class="twitter-feed">
+								<div class="row-fluid">
+									<div class="span12">
+										<div class="tweet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lorem, rutrum non porta. <span class="label label-inverse">01/11/2012</span></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</section>
+							<!-- Twitter Section END -->
+														
+						</div>
+					</div>
+				</div>
+				<div class="span4">
+					<div class="right innerAll">
+						<p>If you have any problems using <strong>AdminKIT</strong> v1.5 or you have any suggestions or requests, please contact us. We appreciate all your feedback.</p>
+						<a class="btn btn-primary btn-icon glyphicons envelope" href="http://www.mosaicpro.biz"><i></i> Contact Support</a>
+					</div>
+				</div>
+			</div>
+			<div class="separator bottom"></div>
+			
+			<!--  Copyright Line -->
+			<div class="copy">&copy; 2012 - 2013 - <a href="#">MosaicPro</a> - All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></div>
+			<!--  End Copyright Line -->
+	
+		</div>
+		<!-- // Footer END -->
+		
+	</div>
+	<!-- // Main Container Fluid END -->
+	
+	<div id="themer" class="collapse">
+		<div class="wrapper">
+			<span class="close2">&times; close</span>
+			<h4>Themer <span>color options</span></h4>
+			<ul>
+				<li>Theme: <select id="themer-theme" class="pull-right"></select><div class="clearfix"></div></li>
+				<li>Primary Color: <input type="text" data-type="minicolors" data-default="#ffffff" data-slider="hue" data-textfield="false" data-position="left" id="themer-primary-cp" /><div class="clearfix"></div></li>
+				<li>
+					<span class="link" id="themer-custom-reset">reset theme</span>
+					<span class="pull-right"><label>advanced <input type="checkbox" value="1" id="themer-advanced-toggle" /></label></span>
+				</li>
+			</ul>
+			<div id="themer-getcode" class="hide">
+				<hr class="separator" />
+				<button class="btn btn-primary btn-small pull-right btn-icon glyphicons download" id="themer-getcode-less"><i></i>Get LESS</button>
+				<button class="btn btn-inverse btn-small pull-right btn-icon glyphicons download" id="themer-getcode-css"><i></i>Get CSS</button>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- JQuery -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery.min.js"></script>
+	
+	<!-- JQueryUI -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+	
+	<!-- JQueryUI Touch Punch -->
+	<!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- Modernizr -->
+	<script src="../../../../common/theme/scripts/plugins/system/modernizr.js"></script>
+	
+	<!-- Bootstrap -->
+	<script src="../../../../common/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- SlimScroll Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
+	
+	<!-- Common Demo Script -->
+	<script src="../../../../common/theme/scripts/demo/common.js?1369414384"></script>
+	
+	<!-- Holder Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/other/holder/holder.js"></script>
+	
+	<!-- Uniform Forms Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
+	
+	<!-- PrettyPhoto -->
+	<script src="../../../../common/theme/scripts/plugins/gallery/prettyphoto/js/jquery.prettyPhoto.js"></script>
+	
+	<!-- Global -->
+	<script>
+	var basePath = '../../../../common/';
+	</script>
+
+	<!-- Bootstrap Extended -->
+	<script src="../../../../common/bootstrap/extend/bootstrap-select/bootstrap-select.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"></script>
+	<script src="../../../../common/bootstrap/extend/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+	<script src="../../../../common/bootstrap/extend/jasny-bootstrap/js/bootstrap-fileupload.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootbox.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-wysihtml5/js/wysihtml5-0.3.0_rc2.min.js"></script>
+	<script src="../../../../common/bootstrap/extend/bootstrap-wysihtml5/js/bootstrap-wysihtml5-0.0.2.js"></script>
+	
+	<!-- Google Code Prettify -->
+	<script src="../../../../common/theme/scripts/plugins/other/google-code-prettify/prettify.js"></script>
+	
+	<!-- Gritter Notifications Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/notifications/Gritter/js/jquery.gritter.min.js"></script>
+	
+	<!-- Notyfy Notifications Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.js"></script>
+	
+	<!-- MiniColors Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.js"></script>
+	
+	<!-- DateTimePicker Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/forms/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Cookie Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/system/jquery.cookie.js"></script>
+	
+	<!-- Colors -->
+	<script>
+	var primaryColor = '#e25f39',
+		dangerColor = '#bd362f',
+		successColor = '#609450',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+	</script>
+	
+	<!-- Themer -->
+	<script>
+	var themerPrimaryColor = primaryColor;
+	</script>
+	<script src="../../../../common/theme/scripts/demo/themer.js"></script>
+	
+	<!-- Twitter Feed -->
+	<script src="../../../../common/theme/scripts/demo/twitter.js"></script>
+	
+	<!-- Easy-pie Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.js"></script>
+	
+	<!-- Sparkline Charts Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/charts/sparkline/jquery.sparkline.min.js"></script>
+	
+	<!-- Ba-Resize Plugin -->
+	<script src="../../../../common/theme/scripts/plugins/other/jquery.ba-resize.js"></script>
+	
+	
+	
+	<!-- Optional Resizable Sidebars -->
+	<!--[if gt IE 8]><!--><script src="../../../../common/theme/scripts/demo/resizable.js?1369414384"></script><!--<![endif]-->
+	
+</body>
+</html>
