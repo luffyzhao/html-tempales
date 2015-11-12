@@ -70,7 +70,7 @@ defined('MENU_RESIZABLE') || define('MENU_RESIZABLE', true);
  * Current / default page
  */
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'index';
+$page = isset($_GET['page']) ? $_GET['page'] : 'form_elements';
 
 /*
  * Other variables
