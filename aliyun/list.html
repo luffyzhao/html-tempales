@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>this is a</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="我的系统">
+	<meta name="description" content="">
+	<!-- intoHead  -->
+	<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="style/console1412.css" />
+<link rel="stylesheet" type="text/css" href="style/home.console1412.css" />
+<!-- 全局公共样式 -->
+<link rel="stylesheet" type="text/css" href="style/global.css" />
+<!-- jQuery2.0库 -->
+<!-- <script type="text/javascript" src="/Public/Js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<!-- LayerUi库 -->
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/jquery.confirm.js"></script>
+<!-- 后台JS -->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/layerUi.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/www.uc22.net">
+document.oncontextmenu=function(){ return false }
+</script><script src="js/www.uc22.net">
+	$(function(){
+		var h = $('.viewFramework-sidebar',parent.document).height();
+		$('.home-container').css('height', h-30);
+	});
+</script>
+	<!-- /intoHead  -->
+	<script type="text/javascript" src="js/www.uc22.net">
+	document.oncontextmenu=function(){ return false }
+	</script>	<script src="js/www.uc22.net">
+		$(function(){
+			// var t;//设定跳转的时间
+			t =  $('.iframe-body').attr('data-setTime');
+			uid =  $('.iframe-body').attr('data-sid');
+			//alert(uid);
+		    setInterval(function() {
+				refer();
+			}, 1000);
+			
+			function refer(){
+			    if(t==60){
+			        parent.layer.open({
+					    type: 2,
+					    title: false,
+					    closeBtn: 0,
+					    shade: [0.8, '#393D49'],
+					    maxmin: false,
+					    maxmin: false,
+					    area: ['100%', '100%'],
+					    content: ["/index.php?s=/Public/loadLogin.html"], //这里content是一个普通的String
+
+					});
+			    }else if(t==0 || uid == ''){
+			    	window.top.location.href = "/index.php?s=/Public/loginOut.html";
+			    }
+			    var body = $("body",parent.document);
+			    var loginOutIframe = body.find('.layui-layer').find('iframe').contents().find('body');
+			    loginOutIframe.find("#localtimeTime span").text(t);
+			    //console.log(t);
+			    t--;
+			}
+		});
+	</script>
+</head>
+<body class="iframe-body" data-settime="600" data-sid="c4ca4238a0b923820dcc509a6f75849b" data-uid="" data-actionurl="Admin/Access/authList">
+	
+	<!-- product body -->
+	<div class="console-container ng-scope">
+		<div bindonce="" class="ng-scope">
+			<!--main table-->
+			<div class="console-title console-title-border drds-detail-title clearfix">
+				<!-- position  -->
+                <h5 class="pull-left">管理列表</h5>
+<div class="inline-block"><a id="addHome" data-nid="OhAtO0O0OtO0O0Op" title="添加到首页快捷菜单" href="">[+]</a></div>
+                <!-- /position  -->
+			</div>
+			<div class="alert alert-info">
+				提醒：<span>以下会员均为管理员 <a href="">权限授权</a> </span>请进入角色列表进行查看
+			</div>
+			<div class="clear10"></div>
+			<div class="ng-isolate-scope mt50">
+				<div class="ng-scope">
+					<div class="searchSection">
+					</div>
+					<div class="gridSection">
+							<table class="table table-hover" id="tab">
+								<thead>
+	                            	<tr>
+	                            		<th width="10">
+	                            			<input onclick="if(this.checked==true) { checkAll('id'); } else { clearAll('id'); }" type="checkbox" value="" name="id" title="全选/取消" class="ng-valid ng-dirty check-all" />
+	                            		</th>
+	                            		<!-- <th  class="center">用户UID</th> -->
+	                            		<th  class="center">用户编号</th>
+	                            		<th  class="center">姓名</th>
+	                            		<th  class="center">邮箱</th>
+	                            		<th  class="center">手机</th>
+	                            		<th  class="center">积分</th>
+	                            		<th  class="center">金钱</th>
+	                            		<th  class="center">经验</th>
+	                            		<th  class="center">登录次数</th>
+	                            		<th  class="center">注册时间</th>
+	                            		<th  class="center">最后登录时间</th>
+	                            		<th  class="center">最后登录IP</th>
+	                            		<th  class="center">状态</th>
+	                            		<th  class="contact-th center">操作</th>
+	                            	</tr>
+	                            </thead>
+            					<tbody>
+            						<!-- ngRepeat: item in store --><!-- ngIf: !loadingState -->
+			                            <tr class="ng-scope">
+			                            	<td width="10" class="center">
+			                            		-
+			                            					                            	</td>
+			                            	<!-- <td>
+			                            		<div class="center"><span class="ng-scope">1</span></div>
+			                            	</td> -->
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">57531015</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-scope">我是管理</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">262877348@qq.com</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">15501052244</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">200</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0.00</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">3080</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">2015-12-09 12:07</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0秒以前</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">119.145.38.243</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">正常</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="left">
+			                            			所属组：
+			                            			[超级管理员]
+			                            						                            		</div>
+			                            	</td>
+			                            </tr>
+			                            <!-- end ngIf: !loadingState --><!-- end ngRepeat: item in store --><!-- ngRepeat: item in store --><!-- ngIf: !loadingState -->
+			                            <tr class="ng-scope">
+			                            	<td width="10" class="center">
+			                            		 
+			                            			 
+			                            				<input type="checkbox" value="39" name="id" class="ng-valid ng-dirty checkbox-input" />			                            	</td>
+			                            	<!-- <td>
+			                            		<div class="center"><span class="ng-scope">39</span></div>
+			                            	</td> -->
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">10210053</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-scope">多组权限</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">8523658569@qq.com</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">18523526856</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0.00</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">2016-01-20 15:57</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">1个星期以前</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0.0.0.0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">正常</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="left">
+			                            			所属组：
+			                            						                            				[添加编辑组][删除禁用组]			                            		</div>
+			                            	</td>
+			                            </tr>
+			                            <!-- end ngIf: !loadingState --><!-- end ngRepeat: item in store --><!-- ngRepeat: item in store --><!-- ngIf: !loadingState -->
+			                            <tr class="ng-scope">
+			                            	<td width="10" class="center">
+			                            		 
+			                            			 
+			                            				<input type="checkbox" value="38" name="id" class="ng-valid ng-dirty checkbox-input" />			                            	</td>
+			                            	<!-- <td>
+			                            		<div class="center"><span class="ng-scope">38</span></div>
+			                            	</td> -->
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">99541011</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-scope">默认管理</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">1140022588@qq.com</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">18523562356</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0.00</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">3</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">2016-01-20 15:54</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">1个星期以前</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">114.240.48.173</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">正常</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="left">
+			                            			所属组：
+			                            						                            				[默认管理组]			                            		</div>
+			                            	</td>
+			                            </tr>
+			                            <!-- end ngIf: !loadingState --><!-- end ngRepeat: item in store --><!-- ngRepeat: item in store --><!-- ngIf: !loadingState -->
+			                            <tr class="ng-scope">
+			                            	<td width="10" class="center">
+			                            		 
+			                            			 
+			                            				<input type="checkbox" value="37" name="id" class="ng-valid ng-dirty checkbox-input" />			                            	</td>
+			                            	<!-- <td>
+			                            		<div class="center"><span class="ng-scope">37</span></div>
+			                            	</td> -->
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">10010055</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-scope">禁用删除</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">1140077155@qq.com</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">18262365896</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0.00</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">4</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">2016-01-20 15:52</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">1天以前</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0.0.0.0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">正常</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="left">
+			                            			所属组：
+			                            						                            				[删除禁用组]			                            		</div>
+			                            	</td>
+			                            </tr>
+			                            <!-- end ngIf: !loadingState --><!-- end ngRepeat: item in store --><!-- ngRepeat: item in store --><!-- ngIf: !loadingState -->
+			                            <tr class="ng-scope">
+			                            	<td width="10" class="center">
+			                            		 
+			                            			 
+			                            				<input type="checkbox" value="36" name="id" class="ng-valid ng-dirty checkbox-input" />			                            	</td>
+			                            	<!-- <td>
+			                            		<div class="center"><span class="ng-scope">36</span></div>
+			                            	</td> -->
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">10099101</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-scope">添加编辑</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">1002724125@qq.com</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">15901052266</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0.00</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">0</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">10</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">2016-01-20 15:51</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">1天以前</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">127.0.0.1</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="center"><span class="ng-binding">正常</span></div>
+			                            	</td>
+			                            	<td>
+			                            		<div class="left">
+			                            			所属组：
+			                            						                            				[添加编辑组]			                            		</div>
+			                            	</td>
+			                            </tr>
+			                            <!-- end ngIf: !loadingState --><!-- end ngRepeat: item in store -->               
+                				</tbody>
+                			</table>
+						</div>
+									</div>
+			</div>
+		</div>
+	</div>
+	<!-- /product body -->
+
+  	<!-- copyRight  -->
+	<div class="copy">
+	<span class="line_white"></span>POWERED BY MingYang V1.0.0.151228 版权所有 © 2013-2015 北京铭扬致远科技有限公司，并保留所有权利。
+</div>
+	<!-- /copyRight  -->
+</body>
+</html>

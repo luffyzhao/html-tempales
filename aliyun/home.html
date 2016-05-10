@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>this is a</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="我的系统">
+	<meta name="description" content="">
+	<!-- intoHead  -->
+	<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="style/console1412.css" />
+<link rel="stylesheet" type="text/css" href="style/home.console1412.css" />
+<!-- 全局公共样式 -->
+
+<!-- jQuery2.0库 -->
+<!-- <script type="text/javascript" src="/Public/Js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<!-- LayerUi库 -->
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/jquery.confirm.js"></script>
+<!-- 后台JS -->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/layerUi.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/www.uc22.net">
+document.oncontextmenu=function(){ return false }
+</script><script src="js/www.uc22.net">
+	$(function(){
+		var h = $('.viewFramework-sidebar',parent.document).height();
+		$('.home-container').css('height', h-30);
+	});
+</script>
+	<!-- /intoHead  -->
+	<script type="text/javascript" src="js/www.uc22.net">
+	document.oncontextmenu=function(){ return false }
+	</script>	<script src="js/www.uc22.net">
+		$(function(){
+			// var t;//设定跳转的时间
+			t =  $('.iframe-body').attr('data-setTime');
+			uid =  $('.iframe-body').attr('data-sid');
+			//alert(uid);
+		    setInterval(function() {
+				refer();
+			}, 1000);
+			
+			function refer(){
+			    if(t==60){
+			        parent.layer.open({
+					    type: 2,
+					    title: false,
+					    closeBtn: 0,
+					    shade: [0.8, '#393D49'],
+					    maxmin: false,
+					    maxmin: false,
+					    area: ['100%', '100%'],
+					    content: ["/index.php?s=/Public/loadLogin.html"], //这里content是一个普通的String
+
+					});
+			    }else if(t==0 || uid == ''){
+			    	window.top.location.href = "/index.php?s=/Public/loginOut.html";
+			    }
+			    var body = $("body",parent.document);
+			    var loginOutIframe = body.find('.layui-layer').find('iframe').contents().find('body');
+			    loginOutIframe.find("#localtimeTime span").text(t);
+			    //console.log(t);
+			    t--;
+			}
+		});
+	</script>
+</head>
+<body class="iframe-body" data-settime="599" data-sid="c4ca4238a0b923820dcc509a6f75849b" data-uid="" data-actionurl="Admin/Index/home">
+	
+	<!-- product body -->
+	<div id="index-body">
+		<div class="ng-scope">
+			<div class="home-container ng-scope">
+
+				<!-- ngIf: !isIntlUser -->
+				<div class="feedback-container ng-scope ng-isolate-scope">
+					<div class="feedback-trigger"><span class="feedback-trigger-text">打开反馈</span> <span class="feedback-trigger-icon"><i class="icon-feedback"></i></span></div>
+					<!-- ngIf: formPanel -->
+					<div id="message" class="feedback ng-scope hidden">
+						<div class="feedback-panel">
+							<div class="feedback-title">
+								<h1>控制台意见反馈</h1>
+								<span ng-click="close()" class="feedback-close"><i class="icon-no"></i></span>
+							</div>
+							<div class="feedback-content">
+								<h2><span class="must">*</span> 反馈内容（必填）</h2>
+								<textarea placeholder="欢迎提出您在使用管理控制台过程中遇到的问题或对管理控制台的宝贵意见(400字以内)，感谢您的支持。" class="ng-pristine ng-valid"></textarea>
+								<div class="feedback-content-count">
+									<span class="">还可以输入<span class="ng-binding">400</span>个字符</span><span style="color:red" class="ng-hide">已经超过<span class="ng-binding">-400</span></span>
+								</div>
+							</div>
+							<div class="feedback-contact">
+								<h2>联系邮箱</h2>
+								<input placeholder="请留下您的联系邮箱，以便我们及时回复您" class="ng-pristine ng-valid"><span class="inputError ng-hide">邮箱格式有误，可能无法回复您</span>
+							</div>
+							<div class="feedback-footer">
+								<a href="" class="submit-btn disabled">提交</a>
+								<a class="submit-btn ng-hide hidden" href="">提交</a>
+							</div>
+						</div>
+					</div>
+					<!-- ngIf: resultPanel -->
+				</div>
+				<!-- end ngIf: !isIntlUser -->
+				<!-- yundun section -->
+				<!-- ngIf: !isSubAccount -->
+				<div class="yundun-container ng-scope">
+					<div class="yundun-content">
+						<a class="yundun-status-icon inline-block yundun-status-abnormal" href=""></a>
+						<span class="ng-scope">
+							<span class="ng-scope ng-binding">
+								<a href="" style="color:#333">
+									<strong class="yundun-title ng-binding" ng-bind=" 'home.yundun.lb.title'| translate">系统</strong>
+								</a>状态
+								<a href="" class="text-danger yundun-status ng-scope ng-binding">提醒</a>， <span class="ng-binding">
+									<span>主要用于新版本更新通知或重大漏洞修复提示。
+										<span class="yundun-text">58</span>天.
+									</span>
+								</span>
+								<span></span>
+							</span>
+						</span>
+					</div>
+				</div>
+				<!-- ngIf: !isSubAccount -->
+				<div class="user-container clearfix ng-scope">
+					<div class="user-section-wrap">
+						<div class="user-section user-info">
+							<div class="section-head">
+								<a href="" class="user-header inline-block">
+									<img ng-if="accountInfo.head" width="30" height="30" class="ng-scope" src="images/header.png">
+								</a>
+								<!-- ngIf: !isIntlUser &&  businessInfo.level -->
+								<div class="user-level ng-scope">
+									<a href="" class="user-level-bg user-level-l2"></a>
+									<span class="user-level-tip ng-binding">您是L2会员，尊享<span class="text-primary ng-binding" style="padding: 0 2px">2</span>项特权，<a href="">查看</a></span>
+								</div>
+								<!-- end ngIf: !isIntlUser &&  businessInfo.level -->
+							</div>
+							<div class="section-content-wrap">
+								<div class="section-content">
+									<div class="user-name"><span class="user-name-hi">Hi,</span><a href="" class="home-blue">我是管理</a></div><!-- |hideStr=1,2,2 -->
+									<div class="user-email ng-binding">26287****@qq.com</div>
+									<!-- ngIf: !isIntlUser -->
+									<div class="user-auth ng-scope">
+										<span class="auth-item icon-account ng-scope active"></span> <span class="auth-item icon-mobile ng-scope active"></span> 
+										<span class="auth-item-gap"></span>
+										<span class="auth-item icon-alipay ng-scope"></span> 
+										<span class="auth-level ng-binding">安全等级: 
+											<a href="" class="auth-level-num ng-isolate-scope">
+												<span class="text-danger">低</span>
+											</a>
+										</span>
+									</div>
+									<!-- end ngIf: !isIntlUser -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="user-section-wrap">
+						<div class="user-section user-charge">
+							<div class="section-head">
+								<div class="section-icon">
+									<!-- ngIf: !isIntlUser --><span class="icon-expense ng-scope" ng-if="!isIntlUser"></span>
+									<!-- end ngIf: !isIntlUser -->
+									<!-- ngIf: isIntlUser -->
+								</div>
+							</div>
+							<div class="section-content-wrap">
+								<div class="section-content">
+									<!-- ngIf: !isIntlUser -->
+									<div class="user-balance ng-scope">
+										<a href="" class="btn btn-sm btn-primary user-recharge ng-binding" style="margin-left:0px;margin-right:10px;">今日销售额</a>
+										<span class="balance-num ng-isolate-scope">
+											<span class="ng-binding">160000</span>
+											<span class="balance-after-point ng-binding">.60</span>
+											<span class="balance-unit ng-binding">元</span>
+										</span>
+									</div>
+									<!-- end ngIf: !isIntlUser -->
+									<div class="user-opts">
+										<!-- ngRepeat: row in homeInfo.USER_OPTS -->
+										<div class="opts-row ng-scope" style="height:30px;">
+											<!-- <span ng-repeat="opt in row" class="ng-scope">
+												<a href="#" class="ng-binding">本月销售额：</a>
+												<span ng-if="$index < row.length -1" class="opt-gap ng-scope"></span>
+											</span> -->
+											<!-- <span class="ng-scope">
+												<a href="#" class="ng-binding">0.00</a>
+											</span> -->
+											<a href="" class="btn btn-sm btn-primary user-recharge ng-binding" style="margin-left:0px;margin-right:13px;height:25px;">本月销售额</a>
+											<span class="balance-num ng-isolate-scope">
+												<span class="ng-binding bold">0</span>
+												<span class="balance-after-point ng-binding">.60</span>
+												<span class="balance-unit ng-binding">元</span>
+											</span>
+										</div>
+										<!-- end ngRepeat: row in homeInfo.USER_OPTS -->
+										<div class="opts-row ng-scope" style="height:30px;">
+											<!-- <span class="ng-scope">
+												<a href="#" class="ng-binding">本年销售额：</a>
+												<span class="opt-gap ng-scope"></span>
+											</span> -->
+											<!-- <span class="ng-scope">
+												<a href="#" class="ng-binding">0.00</a>
+											</span> -->
+											<a href="" class="btn btn-sm btn-primary user-recharge ng-binding" style="margin-left:0px;margin-right:13px;height:25px;">本年销售额</a>
+											<span class="balance-num ng-isolate-scope">
+												<span class="ng-binding bold">0</span>
+												<span class="balance-after-point ng-binding">.60</span>
+												<span class="balance-unit ng-binding">元</span>
+											</span>
+										</div>
+										<!-- end ngRepeat: row in homeInfo.USER_OPTS -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="user-section-wrap">
+						<div class="user-section user-undo">
+							<div class="section-head">
+								<div class="section-icon"><span class="icon-undo"></span></div>
+							</div>
+							<div class="section-content-wrap">
+								<!-- 这部分代看起来需要重构 -->
+								<div class="section-content">
+									<!-- ngIf: !isIntlUser -->
+									<div class="undo-group ng-scope inactive">
+										<div class="group-total home-transition">
+											<span class="undo-num ng-binding">0</span> 
+											<span class="undo-text ng-binding green">已付款订单</span>
+										</div>
+										<ul class="group-list">
+											<!-- ngIf: undo.workorder.wait_feedback -->
+											<!-- ngIf: undo.workorder.wait_confirm -->
+										</ul>
+									</div>
+									<!-- end ngIf: !isIntlUser -->
+									<div class="undo-group ng-scope inactive">
+										<div class="group-total home-transition">
+											<span class="undo-num ng-binding">0</span> 
+											<span class="undo-text ng-binding">待确认订单</span>
+										</div>
+										<ul class="group-list">
+											<!-- ngIf: undo.workorder.wait_feedback -->
+											<!-- ngIf: undo.workorder.wait_confirm -->
+										</ul>
+									</div>
+									<!-- ngIf: !isIntlUser -->
+									<div class="undo-group undo-group-last ng-scope inactive">
+										<div class="group-total home-transition">
+											<span class="undo-num ng-binding">0</span> 
+											<span class="undo-text ng-binding red">退款申请单</span>
+										</div>
+										<ul class="group-list">
+											<li class="group-item">
+												<a href="">
+													<span class="undo-num ng-binding">0</span>
+													<span class="undo-text ng-scope"></span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- end ngIf: !isIntlUser -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end ngIf: !isSubAccount -->
+				<!-- ngIf: productInfo.openList && productInfo.openList.length >0 -->
+				<div class="product-container ng-scope">
+					<div class="product-section">
+						<div class="section-head"><span class="title-strong ng-binding">产品与服务</span></div>
+						<div class="section-content clearfix">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 product-col ng-scope">
+								<div class="product-category ng-scope">
+									<p class="category-title ng-binding">弹性计算</p>
+									<ul>
+										<li class="product-item clearfix ng-scope">
+											<a href="" class="pull-left open-link">
+												<span class="category-icon icon-ecs"></span> 
+												<span class="ng-binding">云服务器ECS</span> 
+												<span class="ng-binding"></span>
+												<span class="item-data ng-scope">
+													<span class="item-count ng-binding">1</span> 
+													<span ng-show="!isIntlUser" class="ng-binding">个</span>
+												</span>
+											</a>
+										</li>
+										<li class="product-item clearfix ng-scope">
+											<a href="" class="pull-left open-link">
+												<span class="category-icon icon-ace"></span> 
+												<span class="ng-binding">云引擎ACE</span> 
+												<span class="ng-binding"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="product-category ng-scope">
+									<p class="category-title ng-binding">网络</p>
+									<ul>
+										<li class="product-item clearfix ng-scope">
+											<a href="" class="pull-left open-link">
+												<span class="category-icon icon-vpc"></span> 
+												<span class="ng-binding">专有网络VPC</span> 
+												<span class="ng-binding"></span>
+											</a>
+										</li>
+										<li class="product-item clearfix ng-scope">
+											<a href="" class="pull-left open-link">
+												<span class="category-icon icon-logo2"></span> 
+												<span class="ng-binding">弹性公网IP</span> 
+												<span class="ng-binding"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- ngIf: productInfo.notopenList && productInfo.notopenList.length >0 -->
+			</div>
+		</div>
+	</div>
+	<!-- /product body -->
+
+  	<!-- copyRight  -->
+	<div class="copy">
+	<span class="line_white"></span>POWERED BY MingYang V1.0.0.151228 版权所有 © 2013-2015 北京铭扬致远科技有限公司，并保留所有权利。
+</div>
+	<!-- /copyRight  -->
+</body>
+</html>

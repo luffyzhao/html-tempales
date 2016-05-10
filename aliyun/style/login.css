@@ -1,0 +1,51 @@
+/*#09C*/
+html,body{
+    height: 100%;
+    box-sizing:content-box;
+    overflow: hidden;
+}
+.container-fluid{
+    height:100%; display:-webkit-flex; display: flex; -webkit-flex-direction:column; flex-direction:column;
+}
+
+.aliyun-login-bg-1{
+    -webkit-flex:4; flex:4; background:#09C;
+}
+
+.aliyun-login-bg-2{
+    -webkit-flex:6; flex:6;
+}
+
+.vertical-center{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.login-center{
+  border:5px solid rgba(0,0,0,0.3);
+  width: 300px;
+  height: 300px;
+}
+
+.logo{
+    font-size:40px;
+    color: #aeb9c2;
+}
+
+.login{
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: relative;    
+}
+
+.login > .form-horizontal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  

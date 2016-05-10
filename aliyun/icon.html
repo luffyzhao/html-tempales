@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>this is a</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="我的系统">
+    <meta name="description" content="">
+    <!-- intoHead  -->
+    <link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="style/console1412.css" />
+<link rel="stylesheet" type="text/css" href="style/home.console1412.css" />
+<!-- 全局公共样式 -->
+<link rel="stylesheet" type="text/css" href="style/global.css" />
+<!-- jQuery2.0库 -->
+<!-- <script type="text/javascript" src="/Public/Js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<!-- LayerUi库 -->
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/jquery.confirm.js"></script>
+<!-- 后台JS -->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/layerUi.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript">
+document.oncontextmenu=function(){ return false }
+</script><script>
+    $(function(){
+        var h = $('.viewFramework-sidebar',parent.document).height();
+        $('.home-container').css('height', h-30);
+    });
+</script>
+    <!-- /intoHead  -->
+    <script type="text/javascript">
+    document.oncontextmenu=function(){ return false }
+    </script>   <script>
+        $(function(){
+            // var t;//设定跳转的时间
+            t =  $('.iframe-body').attr('data-setTime');
+            uid =  $('.iframe-body').attr('data-sid');
+            //alert(uid);
+            setInterval(function() {
+                refer();
+            }, 1000);
+            
+            function refer(){
+                if(t==60){
+                    parent.layer.open({
+                        type: 2,
+                        title: false,
+                        closeBtn: 0,
+                        shade: [0.8, '#393D49'],
+                        maxmin: false,
+                        maxmin: false,
+                        area: ['100%', '100%'],
+                        content: ["/index.php?s=/Public/loadLogin.html"], //这里content是一个普通的String
+
+                    });
+                }else if(t==0 || uid == ''){
+                    window.top.location.href = "/index.php?s=/Public/loginOut.html";
+                }
+                var body = $("body",parent.document);
+                var loginOutIframe = body.find('.layui-layer').find('iframe').contents().find('body');
+                loginOutIframe.find("#localtimeTime span").text(t);
+                //console.log(t);
+                t--;
+            }
+        });
+    </script>
+</head>
+<body class="iframe-body" data-settime="600" data-sid="c4ca4238a0b923820dcc509a6f75849b" data-uid="" data-actionurl="Admin/System/setWeb">
+<span class="icon-amr-2" style="font-size:30px"></span>
+<span class="icon-amr-3" style="font-size:30px"></span>
+<span class="icon-amr" style="font-size:30px"></span>
+<span class="icon-eip-2" style="font-size:30px"></span>
+<span class="icon-eip-3" style="font-size:30px"></span>
+<span class="icon-eip" style="font-size:30px"></span>
+<span class="icon-xianzhi-2" style="font-size:30px"></span>
+<span class="icon-xianzhi-3" style="font-size:30px"></span>
+<span class="icon-xianzhi" style="font-size:30px"></span>
+<span class="icon-expense-i18n" style="font-size:30px"></span>
+<span class="icon-aps-2" style="font-size:30px"></span>
+<span class="icon-aps-3" style="font-size:30px"></span>
+<span class="icon-aps" style="font-size:30px"></span>
+<span class="icon-batchcompute-2" style="font-size:30px"></span>
+<span class="icon-batchcompute-3" style="font-size:30px"></span>
+<span class="icon-batchcompute" style="font-size:30px"></span>
+<span class="icon-sas-2" style="font-size:30px"></span>
+<span class="icon-sas-3" style="font-size:30px"></span>
+<span class="icon-sas" style="font-size:30px"></span>
+<span class="icon-scan-2" style="font-size:30px"></span>
+<span class="icon-scan-3" style="font-size:30px"></span>
+<span class="icon-scan" style="font-size:30px"></span>
+<span class="icon-waf-2" style="font-size:30px"></span>
+<span class="icon-waf-3" style="font-size:30px"></span>
+<span class="icon-waf" style="font-size:30px"></span>
+<span class="icon-mns-2" style="font-size:30px"></span>
+<span class="icon-mns-3" style="font-size:30px"></span>
+<span class="icon-mns" style="font-size:30px"></span>
+<span class="icon-qrcode" style="font-size:30px"></span>
+<span class="icon-unfold" style="font-size:30px"></span>
+<span class="icon-fold" style="font-size:30px"></span>
+<span class="icon-form" style="font-size:30px"></span>
+<span class="icon-accelerate" style="font-size:30px"></span>
+<span class="icon-mss-2" style="font-size:30px"></span>
+<span class="icon-mss-3" style="font-size:30px"></span>
+<span class="icon-mss" style="font-size:30px"></span>
+<span class="icon-feedback" style="font-size:30px"></span>
+<span class="icon-vdc-2" style="font-size:30px"></span>
+<span class="icon-vdc-3" style="font-size:30px"></span>
+<span class="icon-vdc" style="font-size:30px"></span>
+<span class="icon-new" style="font-size:30px"></span>
+<span class="icon-collapse-right" style="font-size:30px"></span>
+<span class="icon-collapse-left" style="font-size:30px"></span>
+<span class="icon-aec" style="font-size:30px"></span>
+<span class="icon-aic" style="font-size:30px"></span>
+<span class="icon-mobile-2" style="font-size:30px"></span>
+<span class="icon-amc" style="font-size:30px"></span>
+<span class="icon-arc" style="font-size:30px"></span>
+<span class="icon-game" style="font-size:30px"></span>
+<span class="icon-iot" style="font-size:30px"></span>
+<span class="icon-right" style="font-size:30px"></span>
+<span class="icon-afc" style="font-size:30px"></span>
+<span class="icon-specs" style="font-size:30px"></span>
+<span class="icon-pen-2" style="font-size:30px"></span>
+<span class="icon-key" style="font-size:30px"></span>
+<span class="icon-bsn" style="font-size:30px"></span>
+<span class="icon-cas-2" style="font-size:30px"></span>
+<span class="icon-cas-3" style="font-size:30px"></span>
+<span class="icon-cas" style="font-size:30px"></span>
+<span class="icon-fenxiao" style="font-size:30px"></span>
+<span class="icon-account-2" style="font-size:30px"></span>
+<span class="icon-qiyeyouxiang-2" style="font-size:30px"></span>
+<span class="icon-qiyeyouxiang-3" style="font-size:30px"></span>
+<span class="icon-qiyeyouxiang" style="font-size:30px"></span>
+<span class="icon-yuming-2" style="font-size:30px"></span>
+<span class="icon-yuming-3" style="font-size:30px"></span>
+<span class="icon-yuming" style="font-size:30px"></span>
+<span class="icon-yumingyuwangzhan-2" style="font-size:30px"></span>
+<span class="icon-yumingyuwangzhan-3" style="font-size:30px"></span>
+<span class="icon-yumingyuwangzhan" style="font-size:30px"></span>
+<span class="icon-yunjiexi-2" style="font-size:30px"></span>
+<span class="icon-yunjiexi-3" style="font-size:30px"></span>
+<span class="icon-yunjiexi" style="font-size:30px"></span>
+<span class="icon-yunxunizhuji-2" style="font-size:30px"></span>
+<span class="icon-yunxunizhuji-3" style="font-size:30px"></span>
+<span class="icon-yunxunizhuji" style="font-size:30px"></span>
+<span class="icon-api-3" style="font-size:30px"></span>
+<span class="icon-api-2" style="font-size:30px"></span>
+<span class="icon-api" style="font-size:30px"></span>
+<span class="icon-dpa-2" style="font-size:30px"></span>
+<span class="icon-dpa-3" style="font-size:30px"></span>
+<span class="icon-dpa" style="font-size:30px"></span>
+<span class="icon-lvwang-2" style="font-size:30px"></span>
+<span class="icon-lvwang-3" style="font-size:30px"></span>
+<span class="icon-lvwang" style="font-size:30px"></span>
+<span class="icon-mas-2" style="font-size:30px"></span>
+<span class="icon-mas-3" style="font-size:30px"></span>
+<span class="icon-mas" style="font-size:30px"></span>
+<span class="icon-dts-2" style="font-size:30px"></span>
+<span class="icon-dts-3" style="font-size:30px"></span>
+<span class="icon-dts" style="font-size:30px"></span>
+<span class="icon-android" style="font-size:30px"></span>
+<span class="icon-cps-2" style="font-size:30px"></span>
+<span class="icon-cps-3" style="font-size:30px"></span>
+<span class="icon-cps" style="font-size:30px"></span>
+<span class="icon-ios" style="font-size:30px"></span>
+<span class="icon-vitality" style="font-size:30px"></span>
+<span class="icon-dfs-2" style="font-size:30px"></span>
+<span class="icon-dfs-3" style="font-size:30px"></span>
+<span class="icon-dfs" style="font-size:30px"></span>
+<span class="icon-edas-2" style="font-size:30px"></span>
+<span class="icon-edas-3" style="font-size:30px"></span>
+<span class="icon-edas" style="font-size:30px"></span>
+<span class="icon-enter" style="font-size:30px"></span>
+<span class="icon-usableCenter-2" style="font-size:30px"></span>
+<span class="icon-usableCenter-3" style="font-size:30px"></span>
+<span class="icon-usableCenter" style="font-size:30px"></span>
+<span class="icon-ace-2" style="font-size:30px"></span>
+<span class="icon-ace" style="font-size:30px"></span>
+<span class="icon-add-1" style="font-size:30px"></span>
+<span class="icon-add-2" style="font-size:30px"></span>
+<span class="icon-add" style="font-size:30px"></span>
+<span class="icon-ads-2" style="font-size:30px"></span>
+<span class="icon-ads" style="font-size:30px"></span>
+<span class="icon-amplify" style="font-size:30px"></span>
+<span class="icon-arrow-down" style="font-size:30px"></span>
+<span class="icon-arrow-left" style="font-size:30px"></span>
+<span class="icon-arrow-right" style="font-size:30px"></span>
+<span class="icon-arrow-up" style="font-size:30px"></span>
+<span class="icon-backup" style="font-size:30px"></span>
+<span class="icon-bell" style="font-size:30px"></span>
+<span class="icon-buy" style="font-size:30px"></span>
+<span class="icon-calendar" style="font-size:30px"></span>
+<span class="icon-cdn-2" style="font-size:30px"></span>
+<span class="icon-cdn" style="font-size:30px"></span>
+<span class="icon-cdp" style="font-size:30px"></span>
+<span class="icon-clock" style="font-size:30px"></span>
+<span class="icon-cloudisk" style="font-size:30px"></span>
+<span class="icon-cloudisk2" style="font-size:30px"></span>
+<span class="icon-db-g" style="font-size:30px"></span>
+<span class="icon-db-r" style="font-size:30px"></span>
+<span class="icon-db-sign" style="font-size:30px"></span>
+<span class="icon-db-t" style="font-size:30px"></span>
+<span class="icon-db" style="font-size:30px"></span>
+<span class="icon-ddos-2" style="font-size:30px"></span>
+<span class="icon-ddos" style="font-size:30px"></span>
+<span class="icon-detail-2" style="font-size:30px"></span>
+<span class="icon-detail" style="font-size:30px"></span>
+<span class="icon-disk-image" style="font-size:30px"></span>
+<span class="icon-down" style="font-size:30px"></span>
+<span class="icon-dpc-2" style="font-size:30px"></span>
+<span class="icon-dpc" style="font-size:30px"></span>
+<span class="icon-drds-2" style="font-size:30px"></span>
+<span class="icon-drds" style="font-size:30px"></span>
+<span class="icon-ecs-2" style="font-size:30px"></span>
+<span class="icon-ecs" style="font-size:30px"></span>
+<span class="icon-ess-2" style="font-size:30px"></span>
+<span class="icon-ess" style="font-size:30px"></span>
+<span class="icon-exec-snapshot-policy" style="font-size:30px"></span>
+<span class="icon-goback" style="font-size:30px"></span>
+<span class="icon-graphs" style="font-size:30px"></span>
+<span class="icon-help-1" style="font-size:30px"></span>
+<span class="icon-help-2" style="font-size:30px"></span>
+<span class="icon-help" style="font-size:30px"></span>
+<span class="icon-home" style="font-size:30px"></span>
+<span class="icon-info-1" style="font-size:30px"></span>
+<span class="icon-info-2" style="font-size:30px"></span>
+<span class="icon-info" style="font-size:30px"></span>
+<span class="icon-invite" style="font-size:30px"></span>
+<span class="icon-jiankong-2" style="font-size:30px"></span>
+<span class="icon-lightcloud-2" style="font-size:30px"></span>
+<span class="icon-lightcloud" style="font-size:30px"></span>
+<span class="icon-log" style="font-size:30px"></span>
+<span class="icon-logo" style="font-size:30px"></span>
+<span class="icon-logo1" style="font-size:30px"></span>
+<span class="icon-logo2" style="font-size:30px"></span>
+<span class="icon-menu" style="font-size:30px"></span>
+<span class="icon-mqs-2" style="font-size:30px"></span>
+<span class="icon-mqs" style="font-size:30px"></span>
+<span class="icon-mts" style="font-size:30px"></span>
+<span class="icon-narrow" style="font-size:30px"></span>
+<span class="icon-no-1" style="font-size:30px"></span>
+<span class="icon-no-2" style="font-size:30px"></span>
+<span class="icon-no" style="font-size:30px"></span>
+<span class="icon-oas-2" style="font-size:30px"></span>
+<span class="icon-oas" style="font-size:30px"></span>
+<span class="icon-ocs-2" style="font-size:30px"></span>
+<span class="icon-ocs" style="font-size:30px"></span>
+<span class="icon-odps-2" style="font-size:30px"></span>
+<span class="icon-odps" style="font-size:30px"></span>
+<span class="icon-ons-2" style="font-size:30px"></span>
+<span class="icon-ons" style="font-size:30px"></span>
+<span class="icon-opensearch-2" style="font-size:30px"></span>
+<span class="icon-opensearch" style="font-size:30px"></span>
+<span class="icon-oss-2" style="font-size:30px"></span>
+<span class="icon-oss" style="font-size:30px"></span>
+<span class="icon-ots-2" style="font-size:30px"></span>
+<span class="icon-ots" style="font-size:30px"></span>
+<span class="icon-pen" style="font-size:30px"></span>
+<span class="icon-performance" style="font-size:30px"></span>
+<span class="icon-pts-2" style="font-size:30px"></span>
+<span class="icon-pts" style="font-size:30px"></span>
+<span class="icon-ram-2" style="font-size:30px"></span>
+<span class="icon-ram" style="font-size:30px"></span>
+<span class="icon-rds-2" style="font-size:30px"></span>
+<span class="icon-rds" style="font-size:30px"></span>
+<span class="icon-regional" style="font-size:30px"></span>
+<span class="icon-remove-1" style="font-size:30px"></span>
+<span class="icon-remove-2" style="font-size:30px"></span>
+<span class="icon-remove" style="font-size:30px"></span>
+<span class="icon-renew-mgt" style="font-size:30px"></span>
+<span class="icon-safe-lock" style="font-size:30px"></span>
+<span class="icon-safetycontrol" style="font-size:30px"></span>
+<span class="icon-search" style="font-size:30px"></span>
+<span class="icon-setup" style="font-size:30px"></span>
+<span class="icon-shift-in" style="font-size:30px"></span>
+<span class="icon-slb-2" style="font-size:30px"></span>
+<span class="icon-slb" style="font-size:30px"></span>
+<span class="icon-sls-2" style="font-size:30px"></span>
+<span class="icon-sls" style="font-size:30px"></span>
+<span class="icon-snapshot" style="font-size:30px"></span>
+<span class="icon-text-free" style="font-size:30px"></span>
+<span class="icon-threshold" style="font-size:30px"></span>
+<span class="icon-tree" style="font-size:30px"></span>
+<span class="icon-unlock" style="font-size:30px"></span>
+<span class="icon-up" style="font-size:30px"></span>
+<span class="icon-updown" style="font-size:30px"></span>
+<span class="icon-viewtable" style="font-size:30px"></span>
+<span class="icon-vpc-2" style="font-size:30px"></span>
+<span class="icon-vpc" style="font-size:30px"></span>
+<span class="icon-warning-1" style="font-size:30px"></span>
+<span class="icon-warning-2" style="font-size:30px"></span>
+<span class="icon-warning" style="font-size:30px"></span>
+<span class="icon-weekly" style="font-size:30px"></span>
+<span class="icon-yes-1" style="font-size:30px"></span>
+<span class="icon-yes-2" style="font-size:30px"></span>
+<span class="icon-yes" style="font-size:30px"></span>
+<span class="icon-yundun-2" style="font-size:30px"></span>
+<span class="icon-yundun" style="font-size:30px"></span>
+<span class="icon-yunjiankong" style="font-size:30px"></span>
+<span class="icon-annex" style="font-size:30px"></span>
+<span class="icon-renew" style="font-size:30px"></span>
+<span class="icon-renew-2" style="font-size:30px"></span>
+<span class="icon-plus-border" style="font-size:30px"></span>
+<span class="icon-wo-domain" style="font-size:30px"></span>
+<span class="icon-wo-email" style="font-size:30px"></span>
+<span class="icon-wo-host" style="font-size:30px"></span>
+<span class="icon-wo-sitebuild" style="font-size:30px"></span>
+<span class="icon-wo-salepre" style="font-size:30px"></span>
+<span class="icon-wo-beian" style="font-size:30px"></span>
+<span class="icon-wo-account" style="font-size:30px"></span>
+<span class="icon-wo-finance" style="font-size:30px"></span>
+<span class="icon-square" style="font-size:30px"></span>
+<span class="icon-left" style="font-size:30px"></span>
+<span class="icon-upload" style="font-size:30px"></span>
+<span class="icon-list-open" style="font-size:30px"></span>
+<span class="icon-pause" style="font-size:30px"></span>
+<span class="icon-list-close" style="font-size:30px"></span>
+<span class="icon-circle" style="font-size:30px"></span>
+<span class="icon-refresh" style="font-size:30px"></span>
+<span class="icon-return" style="font-size:30px"></span>
+<span class="icon-undo" style="font-size:30px"></span>
+<span class="icon-alipay" style="font-size:30px"></span>
+<span class="icon-auto-renew" style="font-size:30px"></span>
+<span class="icon-mobile" style="font-size:30px"></span>
+<span class="icon-account" style="font-size:30px"></span>
+<span class="icon-services" style="font-size:30px"></span>
+<span class="icon-expense" style="font-size:30px"></span>
+<span class="icon-redisa-2" style="font-size:30px"></span>
+<span class="icon-redisa" style="font-size:30px"></span>
+<span class="icon-ddos-3" style="font-size:30px"></span>
+<span class="icon-redisa-3" style="font-size:30px"></span>
+<span class="icon-toolsimage-2" style="font-size:30px"></span>
+<span class="icon-cdp-2" style="font-size:30px"></span>
+<span class="icon-mts-2" style="font-size:30px"></span>
+<span class="icon-toolsimage" style="font-size:30px"></span>
+<span class="icon-toolsimage-3" style="font-size:30px"></span>
+<span class="icon-ons-3" style="font-size:30px"></span>
+<span class="icon-ram-3" style="font-size:30px"></span>
+<span class="icon-yundun-3" style="font-size:30px"></span>
+<span class="icon-pts-3" style="font-size:30px"></span>
+<span class="icon-mts-3" style="font-size:30px"></span>
+<span class="icon-mqs-3" style="font-size:30px"></span>
+<span class="icon-drds-3" style="font-size:30px"></span>
+<span class="icon-cdp-3" style="font-size:30px"></span>
+<span class="icon-dpc-3" style="font-size:30px"></span>
+<span class="icon-ads-3" style="font-size:30px"></span>
+<span class="icon-jiankong-3" style="font-size:30px"></span>
+<span class="icon-vpc-3" style="font-size:30px"></span>
+<span class="icon-slb-3" style="font-size:30px"></span>
+<span class="icon-rds-3" style="font-size:30px"></span>
+<span class="icon-ots-3" style="font-size:30px"></span>
+<span class="icon-oss-3" style="font-size:30px"></span>
+<span class="icon-ess-3" style="font-size:30px"></span>
+<span class="icon-opensearch-3" style="font-size:30px"></span>
+<span class="icon-odps-3" style="font-size:30px"></span>
+<span class="icon-ocs-3" style="font-size:30px"></span>
+<span class="icon-oas-3" style="font-size:30px"></span>
+<span class="icon-lightcloud-3" style="font-size:30px"></span>
+<span class="icon-cdn-3" style="font-size:30px"></span>
+<span class="icon-ace-3" style="font-size:30px"></span>
+<span class="icon-sls-3" style="font-size:30px"></span>
+<span class="icon-ecs-3" style="font-size:30px"></span>
+</body>
+</html>

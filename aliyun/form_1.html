@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>this is a</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="我的系统">
+	<meta name="description" content="">
+	<!-- intoHead  -->
+	<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="style/console1412.css" />
+<link rel="stylesheet" type="text/css" href="style/home.console1412.css" />
+<!-- 全局公共样式 -->
+<link rel="stylesheet" type="text/css" href="style/global.css" />
+<!-- jQuery2.0库 -->
+<!-- <script type="text/javascript" src="/Public/Js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<!-- LayerUi库 -->
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/jquery.confirm.js"></script>
+<!-- 后台JS -->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/layerUi.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript">
+document.oncontextmenu=function(){ return false }
+</script><script>
+	$(function(){
+		var h = $('.viewFramework-sidebar',parent.document).height();
+		$('.home-container').css('height', h-30);
+	});
+</script>
+	<!-- /intoHead  -->
+	<script type="text/javascript">
+	document.oncontextmenu=function(){ return false }
+	</script>	<script>
+		$(function(){
+			// var t;//设定跳转的时间
+			t =  $('.iframe-body').attr('data-setTime');
+			uid =  $('.iframe-body').attr('data-sid');
+			//alert(uid);
+		    setInterval(function() {
+				refer();
+			}, 1000);
+			
+			function refer(){
+			    if(t==60){
+			        parent.layer.open({
+					    type: 2,
+					    title: false,
+					    closeBtn: 0,
+					    shade: [0.8, '#393D49'],
+					    maxmin: false,
+					    maxmin: false,
+					    area: ['100%', '100%'],
+					    content: ["/index.php?s=/Public/loadLogin.html"], //这里content是一个普通的String
+
+					});
+			    }else if(t==0 || uid == ''){
+			    	window.top.location.href = "/index.php?s=/Public/loginOut.html";
+			    }
+			    var body = $("body",parent.document);
+			    var loginOutIframe = body.find('.layui-layer').find('iframe').contents().find('body');
+			    loginOutIframe.find("#localtimeTime span").text(t);
+			    //console.log(t);
+			    t--;
+			}
+		});
+	</script>
+</head>
+<body class="iframe-body" data-settime="600" data-sid="c4ca4238a0b923820dcc509a6f75849b" data-uid="" data-actionurl="Admin/System/setWeb">
+	
+	<!-- product body -->
+	<div class="console-container ng-scope">
+		<div bindonce="" class="ng-scope">
+			<!--main table-->
+			<div class="console-title console-title-border drds-detail-title clearfix">
+				<!-- position  -->
+                <h5 class="pull-left">网站设置</h5>
+<div class="inline-block"><a id="addHome" data-nid="NhQtO0O0OtO0O0Op" title="添加到首页快捷菜单" href="javascript:;">[+]</a></div>
+                <!-- /position  -->
+			</div>
+			<div class="ng-isolate-scope mt50">
+				<div class="margin-top-3">
+					<ul class="nav nav-tabs">
+												<!-- ngRepeat: tab in tabs -->
+						<li class="ng-scope active"><a class="ng-binding" href="javascript:;" >站点信息</a></li>
+						<!-- end ngRepeat: tab in tabs -->
+						<!-- ngRepeat: tab in tabs -->
+						<li class="ng-scope"><a class="ng-binding" href="javascript:;" >基本配置</a></li>
+						<!-- end ngRepeat: tab in tabs --><!-- ngRepeat: tab in tabs -->
+						<li class="ng-scope"><a class="ng-binding" href="javascript:;" >显示配置</a></li>
+						<!-- end ngRepeat: tab in tabs -->
+					</ul>
+				</div>
+				<div class="clear10"></div>
+				<form action="/index.php?s=/System/setWeb.html" method="POST" id="formData" onsubmit="return false">
+					<div class="install mt0">
+                        <dl>
+                            <dd>
+                                <ul class="web">
+                                    <li>
+                                        <strong><b>*</b>网站标题：</strong>
+                                        <input type="text" class="text_input" name="title" value="this is a" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写网站名称，例如：TATA旅游网
+                                        </span>
+                                    </li>
+                                    <li> 
+                                    	<strong><b>*</b>关键词汇：</strong>
+										<input type="text" class="text_input" name="keywords" value="我的系统" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写网站关键词，多个词汇使用 , 分开。例如：他她旅游网,TATA旅游
+                                        </span>
+									</li>
+                                    <li>
+                                        <strong><b>*</b>网站描述：</strong>
+                                        <textarea rows="5" name="description" style="width:350px;margin-right: 47px;text-indent:2px;border: 1px solid #ccc;"></textarea>
+                                        <span class="Validform_checktip">请填写网站描述，例如：百度是一家做搜索的公司</span>
+                                    </li>
+                                    <!-- <li>
+                                        <strong><b>*</b>网站状态：</strong>
+                                        <select name="status" style="margin-right: 50px;text-indent:2px;">
+                                            <option value="1" selected="selected" >启用</option>
+                                            <option value="0"  >禁用</option>
+                                        </select>
+                                        <span style="margin-left:-4px">设置“网站”状态</span> 
+                                    </li> -->
+                                    <li>
+                                        <strong><b>*</b>网站状态：</strong>
+                                        <label style="normal"><input type="radio" name="status" value="1" checked> 开启 </label>
+                                        <label style="normal"><input type="radio" name="status" value="1" /> 关闭 </label>
+                                        <span style="margin-left:290px">设置“网站”状态</span> 
+                                    </li>
+                                    <li> 
+                                    	<strong><b>*</b>网站版权：</strong>
+										<input type="text" class="text_input" name="copyright" value="北京铭扬致远科技有限公司" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写网站版权，例如：北京铭扬致远科技有限公司
+                                        </span>
+									</li>
+                                    <li> 
+                                    	<strong><b>*</b>网站备案：</strong>
+										<input type="text" class="text_input" name="icp" value="京ICP备15048938号" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写网站备案号，例如：京ICP备15048938号
+                                        </span>
+									</li>
+									<li> 
+                                    	<strong><b>*</b>系统版本：</strong>
+										<input type="text" class="text_input" name="version" value="Version 1.0" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写系统版本号，例如：Version 1.0
+                                        </span>
+									</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="install mt1 hidden">
+                    	<dl>
+                            <dd>
+                                <ul class="web">
+                                    <li>
+                                        <strong><b>*</b>LOGO链接：</strong>
+                                        <input type="text" class="text_input" name="domain" value="http://www.uc22.net/" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写首页LOGO连接，例如：http://www.uc22.net/
+                                        </span>
+                                    </li>
+                                    <li> 
+                                    	<strong><b>*</b>LOGO名称：</strong>
+                    					<input type="text" class="text_input" name="domain_title" value="" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写LOGO关键词。例如：他她旅游网
+                                        </span>
+                    				</li>
+                                    <li>
+                                        <strong><b>*</b>其他头部信息：</strong>
+                                        <textarea rows="5" style="width:350px;margin-right: 47px;text-indent:2px;border: 1px solid #ccc;" placeholder="例如：<meta charset='UTF-8'>"></textarea>
+                                        <span class="Validform_checktip">请填写头部相关信息</span>
+                                    </li>
+                                    <li> 
+                                    	<strong><b>*</b>消费积分名称：</strong>
+                    					<input type="text" class="text_input" name="points" value="积分" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">您可以对消费积分进行重新命名，如：金币
+                                        </span>
+                    				</li>
+                    				<li> 
+                                    	<strong><b>*</b>积分换算比例：</strong>
+                    					<input type="text" class="text_input" name="scale" value="1" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">设置每消费1元可以获得多少积分，默认为没消费1元获得1个积分，如设置为0则关闭消费积分功能
+                                        </span>
+                    				</li>
+                                    <li>
+                                        <strong><b>*</b>系统默认时区：</strong>
+                                        <select name="zone" style="margin-right: 50px;text-indent:2px;">
+                                            <option value="-12"  >(GMT -12:00) 埃尼威托克岛, 夸贾林..</option>
+                                            <option value="-11"  >(GMT -11:00) 中途岛, 萨摩亚群岛..</option>
+                                            <option value="-10"  >(GMT -10:00) 夏威夷</option>
+                                            <option value="-9"  >(GMT -09:00) 阿拉斯加</option>
+                                            <option value="-8"  >(GMT -08:00) 太平洋时间(美国和加拿..</option>
+                                            <option value="-7"  >(GMT -07:00) 山区时间(美国和加拿大..</option>
+                                            <option value="-6"  >(GMT -06:00) 中部时间(美国和加拿大..</option>
+                                            <option value="-5"  >(GMT -05:00) 东部时间(美国和加拿大..</option>
+                                            <option value="-4"  >(GMT -05:00) 东部时间(美国和加拿大..</option>
+                                            <option value="-3.5"  >(GMT -03:30) 纽芬兰</option>
+                                            <option value="-3"  >(GMT -03:00) 巴西利亚, 布宜诺斯艾..</option>
+                                            <option value="-2"  >(GMT -02:00) 中大西洋, 阿森松群岛,..</option>
+                                            <option value="-1"  >(GMT -01:00) 亚速群岛, 佛得角群岛 ..</option>
+                                            <option value="0"  >(GMT) 卡萨布兰卡, 都柏林, 爱丁堡, ..</option>
+                                            <option value="1"  >(GMT +01:00) 柏林, 布鲁塞尔, 哥本..</option>
+                                            <option value="2"  >(GMT +02:00) 赫尔辛基, 加里宁格勒,..</option>
+                                            <option value="3"  >(GMT +03:00) 巴格达, 利雅得, 莫斯..</option>
+                                            <option value="4"  >(GMT +04:00) 阿布扎比, 巴库, 马斯..</option>
+                                            <option value="4.5"  >(GMT +04:30) 坎布尔</option>
+                                            <option value="5"  >(GMT +05:00) 叶卡特琳堡, 伊斯兰堡,..</option>
+                                            <option value="5.5"  >(GMT +05:30) 孟买, 加尔各答, 马德..</option>
+                                            <option value="5.75"  >(GMT +05:45) 加德满都</option>
+                                            <option value="6"  >(GMT +06:00) 阿拉木图, 科伦坡, 达..</option>
+                                            <option value="6.5"  >(GMT +06:30) 仰光</option>
+                                            <option value="7"  >(GMT +07:00) 曼谷, 河内, 雅加达..</option>
+                                            <option value="8" selected="selected" >(GMT +08:00) 北京, 香港, 帕斯, 新..</option>
+                                            <option value="9"  >(GMT +09:00) 大阪, 札幌, 首尔, 东..</option>
+                                            <option value="9.5"  >(GMT +09:30) 阿德莱德, 达尔文..</option>
+                                            <option value="10"  >(GMT +10:00) 堪培拉, 关岛, 墨尔本,..</option>
+                                            <option value="11"  >(GMT +11:00) 马加丹, 新喀里多尼亚,..</option>
+                                            <option value="12"  >(GMT +12:00) 奥克兰, 惠灵顿, 斐济,..</option>
+                                        </select>
+                                        <span style="margin-left:-4px">设置系统时区，默认时区：[GMT+08.00] 北京，香港，新加坡，台北</span> 
+                                    </li>
+                                    <li>
+                                        <strong><b>*</b>启用Gzip模式：</strong>
+                                        <label style="normal"><input type="radio" name="gzip" value="1" checked> 开启 </label>
+                                        <label style="normal"><input type="radio" name="gzip" value="0" /> 关闭 </label>
+                                        <span style="margin-left:290px">需要php支持Gzip。如果已经用Apache等对页面进行Gzip压缩，请关闭</span> 
+                                    </li>
+                                </ul>
+                            </dd>
+                    	</dl>
+                    </div>
+					<div class="install mt2 hidden">
+                    	<dl>
+                            <dd>
+                                <ul class="web">
+                                    <li>
+                                        <strong><b>*</b>浏览历史数量：</strong>
+                                        <input type="text" class="text_input" name="history" value="10" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写网站名称，例如：TATA旅游网
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <strong><b>*</b>列表页显示数量：</strong>
+                                        <input type="text" class="text_input" name="listpage" value="15" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写网站名称，例如：TATA旅游网
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <strong><b>*</b>文章页显示数量：</strong>
+                                        <input type="text" class="text_input" name="articlepage" value="10" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip ">请填写网站名称，例如：TATA旅游网
+                                        </span>
+                                    </li>
+                                </ul>
+                            </dd>
+                    	</dl>
+                    </div>
+				</form>
+				<!-- submit  -->
+                <div class="submit">
+    <!-- <input type="submit" id="submit" value="提交"> -->
+    <button id="submit" style="padding:2px 15px;">提交</button>
+</div>
+                <!-- /submit  -->
+			</div>
+		</div>
+	</div>
+	<!-- copyRight  -->
+	<div class="copy">
+	<span class="line_white"></span>POWERED BY MingYang V1.0.0.151228 版权所有 © 2013-2015 北京铭扬致远科技有限公司，并保留所有权利。
+</div>
+	<!-- /copyRight  -->
+	<!-- /product body -->
+
+  	<!-- copyRight  -->
+	<div class="copy">
+	<span class="line_white"></span>POWERED BY MingYang V1.0.0.151228 版权所有 © 2013-2015 北京铭扬致远科技有限公司，并保留所有权利。
+</div>
+	<!-- /copyRight  -->
+</body>
+</html>

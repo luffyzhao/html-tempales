@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>this is a</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="我的系统">
+	<meta name="description" content="">
+	<!-- intoHead  -->
+	<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="style/console1412.css" />
+<link rel="stylesheet" type="text/css" href="style/home.console1412.css" />
+<!-- 全局公共样式 -->
+<link rel="stylesheet" type="text/css" href="style/global.css" />
+<!-- jQuery2.0库 -->
+<!-- <script type="text/javascript" src="/Public/Js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<!-- LayerUi库 -->
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/jquery.confirm.js"></script>
+<!-- 后台JS -->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/layerUi.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/www.uc22.net">
+document.oncontextmenu=function(){ return false }
+</script><script src="js/www.uc22.net">
+	$(function(){
+		var h = $('.viewFramework-sidebar',parent.document).height();
+		$('.home-container').css('height', h-30);
+	});
+</script>
+	<!-- /intoHead  -->
+	<script type="text/javascript" src="js/www.uc22.net">
+	document.oncontextmenu=function(){ return false }
+	</script>	<script src="js/www.uc22.net">
+		$(function(){
+			// var t;//设定跳转的时间
+			t =  $('.iframe-body').attr('data-setTime');
+			uid =  $('.iframe-body').attr('data-sid');
+			//alert(uid);
+		    setInterval(function() {
+				refer();
+			}, 1000);
+			
+			function refer(){
+			    if(t==60){
+			        parent.layer.open({
+					    type: 2,
+					    title: false,
+					    closeBtn: 0,
+					    shade: [0.8, '#393D49'],
+					    maxmin: false,
+					    maxmin: false,
+					    area: ['100%', '100%'],
+					    content: ["/index.php?s=/Public/loadLogin.html"], //这里content是一个普通的String
+
+					});
+			    }else if(t==0 || uid == ''){
+			    	window.top.location.href = "/index.php?s=/Public/loginOut.html";
+			    }
+			    var body = $("body",parent.document);
+			    var loginOutIframe = body.find('.layui-layer').find('iframe').contents().find('body');
+			    loginOutIframe.find("#localtimeTime span").text(t);
+			    //console.log(t);
+			    t--;
+			}
+		});
+	</script>
+</head>
+<body class="iframe-body" data-settime="600" data-sid="c4ca4238a0b923820dcc509a6f75849b" data-uid="" data-actionurl="Admin/Member/addUser">
+	
+    <!-- product body -->
+    <div class="console-container ng-scope">
+        <div class="ng-scope">
+            <!--main table-->
+            <div class="console-title console-title-border drds-detail-title clearfix">
+                <!-- position  -->
+                <h5 class="pull-left">添加用户</h5>
+<div class="inline-block"><a id="addHome" data-nid="MhjtAtO0O0Op" title="添加到首页快捷菜单" href="">[+]</a></div>
+                <!-- /position  -->
+            </div>
+            <div class="alert alert-info">
+                提醒：<span>温馨提示</span>
+                <a class="show-tip" href="">关闭操作提示</a>
+            </div>
+            <div id='tip' class="msg-title">
+                <div class="clear10"></div>
+                <p>- 新增用户必须填写6-16位密码</p>
+            </div>
+            <div class="ng-isolate-scope mt50">
+                <form action="/index.php?s=/Member/addEdit.html" method="post" id="formData" onsubmit="return false">
+                    <div class="install mt10">
+                        <dl>
+                            <dd>
+                                <ul class="web">
+                                    <h5>基本信息</h5>
+                                    <li>
+                                        <strong><b>*</b>用户昵称：</strong>
+                                        <input type="text" class="text_input" name="nickname"  value="" placeholder="" datatype="*4-10|/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/"><span class="Validform_checktip">请填写用户昵称，支持中文、英文和数字，4-10位
+                                        </span>
+                                    </li>
+                                                                        <li>
+                                        <strong><b>*</b>用户密码：</strong>
+                                        <input type="password" class="text_input" name="password"  value="" placeholder="" datatype="*4-10"><span class="Validform_checktip">请填写用户登录密码，6-16位</span>
+                                    </li>
+                                    <li>
+                                        <strong><b>*</b>确认密码：</strong>
+                                        <input type="password" class="text_input" name="repassword" placeholder="" datatype="*" recheck="repassword"><span class="Validform_checktip">核对密码，确保两次密码输入正确，6-16位</span>
+                                    </li>
+                                    <li>
+                                        <strong><b>*</b>用户邮箱：</strong>
+                                        <input type="text" class="text_input" name="email"  value="" placeholder="" datatype="e" ignore="ignore"><span class="Validform_checktip">填写用户邮箱，格式为：abc@abc.com</span>
+                                    </li>
+                                    <li>
+                                        <strong><b>*</b>用户手机：</strong>
+                                        <input type="text" class="text_input" name="mobile"  value="" placeholder="" datatype="e" ignore="ignore"><span class="Validform_checktip">填写用户邮箱，格式为：15501052244</span>
+                                    </li>
+                                    <li>
+                                        <strong><b>*</b>用户状态：</strong>
+                                        <select name="status" style="margin-right: 50px;text-indent:2px;">
+                                            <option value="1"  >启用</option>
+                                            <option value="0" selected="selected" >禁用</option>
+                                        </select>
+                                        <span style="margin-left:-4px">设置“用户”状态</span> 
+                                    </li>
+                                </ul>
+                                <input type="hidden" name="id" value="">
+                            </dd>
+                        </dl>
+                    </div>
+                </form>
+                <!-- submit  -->
+                <div class="submit">
+    <!-- <input type="submit" id="submit" value="提交"> -->
+    <button id="submit" style="padding:2px 15px;">提交</button>
+</div>
+                <!-- /submit  -->
+            </div>
+        </div>
+    </div>
+    <!-- /product body -->
+
+  	<!-- copyRight  -->
+	<div class="copy">
+	<span class="line_white"></span>POWERED BY MingYang V1.0.0.151228 版权所有 © 2013-2015 北京铭扬致远科技有限公司，并保留所有权利。
+</div>
+	<!-- /copyRight  -->
+</body>
+</html>
