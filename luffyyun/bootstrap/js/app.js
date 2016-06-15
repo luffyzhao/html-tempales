@@ -27,14 +27,12 @@ $(function() {
         $(this).parent().addClass('active');
     });
 
-    $(".ng-scope").bind('click', function(event) {
-        event.preventDefault();
-        if(typeof TabIframe == 'undefined'){
-            (typeof window.parent.TabIframe) != 'undefined' && window.parent.TabIframe(this);
-        }else{
-            TabIframe(this);
-        }
-    });
+    if(typeof $.fn.TabIframe == 'undefined'){
+        (typeof window.parent.$.fn.TabIframe) != 'undefined' && window.parent.$('a.ng-scope').TabIframe();
+    }else{
+        $('a.ng-scope').TabIframe()
+    }
+
 
     $('[data-toggle="left-nav"] a:first').trigger('click');
 
