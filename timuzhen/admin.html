@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>铁木针后台管理中心</title>
+<link rel="stylesheet" href="css/tmz.css">
+<script src="js/jquery.js"></script>
+<script src="js/tmz.js"></script>
+<script src="js/respond.js"></script>
+</head>
+<body>
+<div class="layout bg-yellow box-shadow" style="height:42px;">
+   <div class="layout">
+         <div class="x2"><h4 class="height-large text-white padding-big-left"><span class="icon-pied-piper-alt"></span> 铁木针后台管理中心</h4></div>
+		 <div class="x10">
+		      <h5 class="text-white height-large padding-big-right text-right">
+			      <a href="#" class="text-white icon-home margin-right"> 网站主页 </a> 
+				  
+				  <a href="#" class="text-white icon-cog margin-right"> 系统设置 </a>
+				  
+				  <a href="#" class="text-white icon-power-off margin-right"> 注销登陆 </a> 
+				  
+				  <a href="#" class="text-white icon-minus-square margin-right"> 清除缓存 </a> 
+				  
+				  <a href="#" class="text-white icon-edit (alias)"> 修改密码 </a>
+			  
+			  </h5>
+		 </div>
+   </div>
+</div>
+<div class="layout">
+     <div class="line"> 
+		 <div class="x2 padding"> 
+		     <div id="win-left-height" class="border box-shadow" style="overflow:auto">
+				   <div class="panel border border-none">
+							<div class="panel-head radius-none">
+								<strong class="icon-home"> <a href="#">后台首页</a></strong>
+								
+							</div>
+				   </div>
+			   
+				   <div class="collapse-toggle">
+						<div class="panel border-bottom border-none">
+							<div class="panel-head radius-none">
+								<h5> <span class="icon-th-large"></span> <strong>商品管理</strong></h5>
+							</div>
+							<div class="panel-body">
+								 <ul class="list-unstyle height-big padding-big-left h6">
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品类型 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 活动列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品分类 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 批量上传 </a></li>
+								 </ul>
+							</div>
+						</div>
+						<div class="panel border-bottom border-none">
+							<div class="panel-head radius-none">
+								<h5> <span class="icon-money"></span> <strong>财务管理</strong></h5>
+							</div>
+							<div class="panel-body">
+								<ul class="list-unstyle height-big padding-big-left h6">
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 会员列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 会员等级 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 提现管理 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 资金明细 </a></li>
+
+								 </ul>
+							</div>
+						</div>
+						<div class="panel border-bottom border-none">
+							<div class="panel-head radius-none">
+								<h5> <span class="icon-user"></span> <strong>会员管理</strong></h5>
+							</div>
+							<div class="panel-body">
+								<ul class="list-unstyle height-big padding-big-left h6">
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 会员列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 会员等级 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 提现管理 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 资金明细 </a></li>
+
+								 </ul>
+							</div>
+						</div>
+						<div class="panel border-bottom border-none">
+							<div class="panel-head radius-none">
+								<h5> <span class="icon-file-text"></span> <strong>信息管理</strong></h5>
+							</div>
+							<div class="panel-body">
+							 <ul class="list-unstyle height-big padding-big-left h6">
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品列表 </a></li>
+									 <li><a class="icon-arrow-circle-o-right" href="#"> 商品列表 </a></li>
+								 </ul>
+							</div>
+						</div>
+					</div>
+			  </div>	
+		 </div>
+		 <div class="x10 padding" style="padding-left:0">
+		       
+			    <div id="win-right-height" class="border box-shadow" style="background:#f5f5f5;overflow:auto">
+				     <div class="panel border border-none">
+						<div class="panel-head radius-none">
+						    <strong class="icon-list text-main"> 商品列表</strong>
+							<a href="#" class="text-blue float-right icon-plus"> 添加商品</a>
+						</div>
+						<form method="post">
+						<div class="panel radius-none border-none padding bg-white">
+							<div class="padding-bottom border-bottom">
+								
+								<input type="text" class="input input-auto " placeholder="商品ID">
+								<select class="input input-auto"> 
+									<option>选择分类</option>
+									<option>所有分类</option>
+									<option>所有分类</option>
+									<option>所有分类</option>
+								</select>
+								<input type="text" class="input input-auto" placeholder="商品名称">
+								<input type="submit" value="确定" class="button bg-yellow">
+								
+							</div>
+							<table class="table table-hover h6">
+								<tr>
+								
+									<th width="50"><input type="checkbox" class="checkall" name="checkall" checkfor="id" /> ID</th>
+									<th width="60">图片</th>
+									<th width="*">商品名称</th>
+									<th width="100">本店价</th>
+									
+									<th width="100">市场价</th>
+									<th width="100">状态</th>
+									<th width="100">库存</th>
+									<th width="100">排序</th>
+									<th width="100">操作</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>
+										<input type="checkbox" name="id" value="1" />
+									</td>
+									<td><img src="http://www.17zct.com/Uploads/thumb/2016-07-08/thumb_1467960528.jpg" width="25" height="25"></td>
+									<td>芡实仁 500g 整个芡实米鸡头米 山药薏米芡粥 特价包邮</td>
+									<td><span class="text-yellow"> 120.00</span></td>
+									<td><span class="text-yellow"> 420.00</span></td>
+									<td><span class="text-red"> 显示 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td><span class="text-blue"> 50 </span></td>
+									<td>
+									<a class="button border-blue button-little" href="#">修改</a>
+									<a class="button border-yellow button-little" href="#" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+									</td>
+								</tr>
+								
+								
+								
+								
+							</table>
+						</div>
+					</form>
+					<div class="panel-foot text-center" style="background:#fff">
+								<ul class="pagination">
+									<li><a href="#">上一页</a></li>
+								</ul>
+								<ul class="pagination pagination-group">
+									<li><a href="#">1</a></li>
+									<li class="active"><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+								</ul>
+								<ul class="pagination">
+									<li><a href="#">下一页</a></li>
+								</ul>
+					</div>
+					</div>
+				</div>
+		  
+		 </div>
+	 </div>
+</div>
+
+
+
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+$("#win-left-height").css("height",$(window).height() - 62);
+$("#win-right-height").css("height",$(window).height() - 62);
+
+$(document).ready(function(){
+
+});
+
+</script>
+
+
+
+
+
