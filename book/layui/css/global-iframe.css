@@ -99,7 +99,9 @@
     right: 0;
     top: 17px;
 }
-
+.layui-layout-admin .layui-body{
+    bottom: 82px;
+}
 .menu {
     position: absolute;
     right: 0;

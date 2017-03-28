@@ -1,0 +1,19 @@
+{
+    "code" : 1,
+    "msg"  : "成功",
+    "data" : {
+        "pages" : {
+            "pages":1,
+            "curr":1
+        },
+        "data":[
+            {
+                "name" : "路飞",
+                "email" : "luffyzhao@vip.126.com",
+                "last_time" : "2017-03-28 17:26:25",
+                "last_ip" : "127.0.0.1",
+                "id": 1
+            }
+        ]
+    }
+}

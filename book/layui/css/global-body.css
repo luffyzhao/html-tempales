@@ -1,0 +1,21 @@
+.layui-icon .iconfont{
+    font-size: 30px;
+}
+.field-tip{
+    color: red;
+}
+.layui-form-pane .layui-input-inline[pane] {
+    position: relative;
+    border: 1px solid #e6e6e6;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.layui-form-pane .layui-input-inline[pane] .layui-form-radio, .layui-form-pane .layui-input-inline[pane] .layui-form-switch{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+td[colspan]{
+    text-align: center;
+}

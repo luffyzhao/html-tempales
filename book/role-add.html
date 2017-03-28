@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>颜如玉后台管理平台-用户组管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="./layui/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./layui/css/global-body.css">
+    <link href="./favicon.ico" rel="shortcut icon">
+    <script src="./layui/layui.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>用户组添加</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" method="post" action="/">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>用户组名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[name]" lay-verify="role" autocomplete="off" placeholder="用户组名称" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">用户组说明</label>
+            <div class="layui-input-block">
+                <textarea placeholder="用户组说明" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <fieldset class="layui-elem-field">
+            <legend>
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="权限管理">
+                <a href="javascript:void(0)" class="layui-btn layui-btn-primary layui-btn-small rule-all" title="">全选</a>
+                <a href="javascript:void(0)" class="layui-btn layui-btn-primary layui-btn-small rule-cancel" title="">取消</a>
+            </legend>
+            <div class="layui-field-box">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="用户列表">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="添加用户">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="编辑用户">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="删除用户">
+                <hr>
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="用户组列表">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="添加用户组">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="编辑用户组">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="删除用户组">
+            </div>
+        </fieldset>
+        <fieldset class="layui-elem-field">
+            <legend>
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="书籍管理">
+                <a href="javascript:void(0)" class="layui-btn layui-btn-primary layui-btn-small rule-all" title="">全选</a>
+                <a href="javascript:void(0)" class="layui-btn layui-btn-primary layui-btn-small rule-cancel" title="">取消</a>
+            </legend>
+            <div class="layui-field-box">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="书籍列表">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="添加书籍">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="编辑书籍">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="删除书籍">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="章节列表">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="添加列表">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="编辑列表">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="删除列表">
+                <hr>
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="标签列表">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="添加标签">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="编辑标签">
+                <input type="checkbox" name="data[rule][]" lay-skin="primary" title="删除标签">
+            </div>
+        </fieldset>
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit="" lay-filter="save">保存</button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        layui.config({
+            base: './layui/lay/my-modules/',
+            version: '1489724249329'
+        }).use('global.body');
+
+        layui.define(['jquery','form'], function(exports){
+            var $ = layui.jquery
+                ,form = layui.form();
+
+            $(document).on('click', '.rule-all', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var $this = $(this);
+                $this.parent().parent().find('input[type="checkbox"]').prop('checked',true);
+                form.render('checkbox');
+            });
+            $(document).on('click', '.rule-cancel', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var $this = $(this);
+                $this.parent().parent().find('input[type="checkbox"]').prop('checked',false);
+                form.render('checkbox');
+            });
+        });
+    </script>
+</body>
+
+</html>

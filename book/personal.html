@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>颜如玉后台管理平台-个人中心管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="./layui/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./layui/css/global-body.css">
+    <link href="./favicon.ico" rel="shortcut icon">
+    <script src="./layui/layui.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>个人中心</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" method="post" action="/">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>姓名</label>
+            <div class="layui-input-inline" pane="">
+                路飞
+            </div>
+            <label class="layui-form-label"><span class="field-tip">*</span>邮箱</label>
+            <div class="layui-input-inline" pane="">
+                luffyzhao@vip.126.com
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit="" lay-filter="save">保存</button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        layui.config({
+            base: './layui/lay/my-modules/',
+            version: '1489724249329'
+        }).use('global.body');
+    </script>
+</body>
+
+</html>

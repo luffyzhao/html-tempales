@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>颜如玉后台管理平台-用户管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="./layui/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./layui/css/global-body.css">
+    <link href="./favicon.ico" rel="shortcut icon">
+    <script src="./layui/layui.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>用户搜索</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" action="#">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="search[name]" autocomplete="off" placeholder="用户名" class="layui-input">
+            </div>
+            <div class="layui-input-inline layui-btn-group">
+                <button class="layui-btn layui-btn-primary" lay-submit="" data-elem=".layui-body-table" lay-filter="search"><i class="iconfont icon-originalimage"></i></button>
+                <a class="layui-btn layui-btn-primary" href="user-add.html"><i class="layui-icon">&#xe654;</i></a>
+            </div>
+        </div>
+    </form>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>用户列表</legend>
+    </fieldset>
+
+    <table class="layui-table" lay-skin="line">
+        <colgroup>
+            <col width="150">
+            <col>
+            <col width="200">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>登录邮箱</th>
+                <th>最后一次登录时间</th>
+                <th>最后一次登录IP</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="layui-body-table" data-url="./data/user.json" data-elem=".layui-body-table">
+            
+        </tbody>
+        <script type="text/html" class="layui-body-table-script">
+            {{#  layui.each(d.data.data, function(index, item){ }}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.last_time }}</td>
+                    <td>{{ item.last_ip }}</td>
+                    <td>
+                        <a class="layui-btn layui-btn-primary layui-btn-small" href="user-add.html">
+                            <i class="layui-icon">&#xe642;</i>
+                        </a>
+                        <a class="layui-btn layui-btn-primary layui-btn-small" href="#" lay-delete>
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    </td>
+                </tr>
+            {{# }); }}
+        </script>
+    </table>
+    <div lay-page></div>
+
+
+    <script type="text/javascript">
+        layui.config({
+            base: './layui/lay/my-modules/',
+            version: '1489724249329'
+        }).use('global.body');
+    </script>
+</body>
+
+</html>
