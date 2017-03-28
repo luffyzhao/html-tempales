@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>颜如玉后台管理平台-个人中心管理</title>
+    <title>颜如玉后台管理平台-书籍标签管理</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,27 +19,19 @@
 
 <body>
     <fieldset class="layui-elem-field layui-field-title">
-        <legend>修改密码</legend>
+        <legend>书籍标签添加</legend>
     </fieldset>
     <form class="layui-form layui-form-pane" method="post" action="/">
         <div class="layui-form-item">
-            <label class="layui-form-label"><span class="field-tip">*</span>姓名</label>
-            <div class="layui-input-inline" pane="">
-                路飞
-            </div>
-            <label class="layui-form-label"><span class="field-tip">*</span>邮箱</label>
-            <div class="layui-input-inline" pane="">
-                luffyzhao@vip.126.com
+            <label class="layui-form-label"><span class="field-tip">*</span>标签名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[name]" lay-verify="tags" autocomplete="off" placeholder="标签名称" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label"><span class="field-tip">*</span>密码</label>
-            <div class="layui-input-inline">
-                <input type="text" name="data[password]" placeholder="密码" lay-verify="pass" autocomplete="off" placeholder="密码" class="layui-input">
-            </div>
-            <label class="layui-form-label"><span class="field-tip">*</span>确认密码</label>
-            <div class="layui-input-inline">
-                <input type="text" name="data[confirm]" autocomplete="off" placeholder="确认密码" class="layui-input">
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">标签说明</label>
+            <div class="layui-input-block">
+                <textarea placeholder="标签说明" name="desc" class="layui-textarea"></textarea>
             </div>
         </div>
 

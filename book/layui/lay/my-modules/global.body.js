@@ -1,4 +1,4 @@
-layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage'], function(exports) {
+layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage','verify'], function(exports) {
     var $ = layui.jquery,
         layer = layui.layer,
         form = layui.form(),
@@ -142,6 +142,7 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage'], f
         var action = typeof(data.form.action) == 'undefined' ? document.URL : data.form.action,
             method = typeof(data.form.method) == 'undefined' ? 'post' : data.form.method,
             params = JSON.stringify(data.field);
+        console.log(11);
         $.ajax({
             "url": action,
             "type": 'POST',
