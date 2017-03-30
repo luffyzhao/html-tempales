@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>颜如玉后台管理平台-采集管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="./layui/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./layui/css/global-body.css">
+    <link href="./favicon.ico" rel="shortcut icon">
+    <script src="./layui/layui.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>采集添加</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" method="post" action="/">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>采集名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[name]" lay-verify="tags" autocomplete="off" placeholder="采集名称" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>采集网址</label>
+            <div class="layui-input-inline layui-input-inline-big">
+                <input type="text" name="data[url]" autocomplete="off" placeholder="采集网址" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">采集站点的搜索页面 可以用 {$bookname} 表示书籍的名称 </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>搜索页面</label>
+            <div class="layui-input-inline layui-input-inline-big">
+                <input type="text" name="data[search]" autocomplete="off" placeholder="搜索页面" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">采集书籍搜索页面选择器dom.</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>列表页面</label>
+            <div class="layui-input-inline layui-input-inline-big">
+                <input type="text" name="data[list]" autocomplete="off" placeholder="列表页面" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">采集书籍章节列表数据时选择器dom.</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>章节详情</label>
+            <div class="layui-input-inline layui-input-inline-big">
+                <input type="text" name="data[uj]" autocomplete="off" placeholder="章节详情页面" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">采集书籍章节详情数据时选择器dom.</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">内容替换</label>
+            <div class="layui-input-inline layui-input-inline-group">
+                <input type="text" name="data[replace][search][]" autocomplete="off" placeholder="搜索" class="layui-input">
+            </div>
+            <div class="layui-input-inline layui-input-inline-group">
+                <input type="text" name="data[replace][replace][]" autocomplete="off" placeholder="替换" class="layui-input">
+            </div>
+            <a class="layui-btn layui-btn-primary" data-replace data-parts="true"><i class="layui-icon">&#xe654;</i>添加</a>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">采集说明</label>
+            <div class="layui-input-block">
+                <textarea placeholder="采集说明" name="desc" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <a class="layui-btn" lay-submit="" lay-filter="save">保存</a>
+        </div>
+    </form>
+    
+    <script id="replace-input" type="text/html">
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-form-label-group"></label>
+            <div class="layui-input-inline layui-input-inline-group">
+                <input type="text" name="data[replace][search][]" autocomplete="off" placeholder="搜索" class="layui-input">
+            </div>
+            <div class="layui-input-inline layui-input-inline-group">
+                <input type="text" name="data[replace][replace][]" autocomplete="off" placeholder="替换" class="layui-input">
+            </div>
+            <a class="layui-btn layui-btn-primary" data-replace data-parts="false"><i class="layui-icon">&#xe640;</i>删除</a>
+        </div>
+    </script>
+    <script type="text/javascript">
+        layui.config({
+            base: './layui/lay/my-modules/',
+            version: '1489724249329'
+        }).use('global.body');
+
+        layui.define(['layer', 'jquery', 'laytpl', 'form'], function(exports) {
+            var $ = layui.jquery,
+            laytpl = layui.laytpl;
+
+            $(document).on('click', '[data-replace]', function() {
+                var $this = $(this),
+                    $op = $(this).data('parts');
+                // 等于真新增
+                // 等于假删除
+                if ($op) {
+                    // console.log($this.parent().parent());
+                    laytpl($('#replace-input').html()).render({}, function(html) {
+                        $this.parent().after(html);
+                    });
+                } else {
+                    $this.parent().remove();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

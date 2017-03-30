@@ -1,0 +1,26 @@
+{
+    "code" : 1,
+    "msg"  : "成功",
+    "data" : {
+        "pages" : {
+            "pages":10,
+            "curr":1
+        },
+        "data":[
+            {
+                "name" : "圣虚",
+                "tags" : "修真,仙侠",
+                "author" : "辰东",
+                "status" : 0,
+                "id": 1
+            },
+            {
+                "name" : "斗罗大陆",
+                "tags" : "修真,仙侠",
+                "author" : "唐家三少",
+                "status" : 1,
+                "id": 2
+            }
+        ]
+    }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>颜如玉后台管理平台-书籍管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="./layui/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./layui/css/global-body.css">
+    <link href="./favicon.ico" rel="shortcut icon">
+    <script src="./layui/layui.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>书籍添加</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" method="post" action="/">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>书籍名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[name]" autocomplete="off" placeholder="书籍名称" class="layui-input">
+            </div>
+            <label class="layui-form-label"><span class="field-tip">*</span>别名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[alias]" autocomplete="off" placeholder="别名" class="layui-input">
+            </div>
+            <label class="layui-form-label"><span class="field-tip">*</span>书籍作者</label>
+            <div class="layui-input-inline">
+                <select name="search[author]">
+                    <option value="">请选择</option>
+                    <option value="1">辰东</option>
+                    <option value="2">唐家三少</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>书籍标签</label>
+            <div class="layui-input-block" pane="">
+                <span class="tag">玄幻<a href="#" title="Removing tag">x</a></span>
+            </div>
+            <a class="layui-btn layui-btn-primary" data-iframe data-url="tags-iframe.html" data-params='[{"id":2}]'>
+                <i class="layui-icon">&#xe654;</i> 添加
+            </a>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">书籍ISBN</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[isbn]" autocomplete="off" placeholder="书籍ISBN" class="layui-input">
+            </div>
+            <label class="layui-form-label">书籍来源</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[source]" autocomplete="off" placeholder="书籍来源" class="layui-input">
+            </div>
+            <label class="layui-form-label">购买链接</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[purchase]" autocomplete="off" placeholder="购买链接" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text layui-form-text-inline">
+            <div class="form-item-group">
+                <label class="layui-form-label"><span class="field-tip">*</span>封面图片</label>
+                <div class="layui-input-inline" image>
+                    <div class="site-demo-upload">
+                      <div class="site-demo-upbar">
+                        <input type="file" name="file" class="layui-upload-file layui-upload-file-image" id="test">
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-item-group form-item-group-image-desc">
+                <label class="layui-form-label">书籍说明</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="书籍说明" class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">采集地址</label>
+            <div class="layui-input-inline layui-input-inline-big layui-input-inline-group">
+                <select name="data[gather][gather_id][]" class="layui-input">
+                    <option value="">请选译</option>
+                    <option value="1">起点</option>
+                    <option value="2">顶点</option>
+                    <option value="3">书趣</option>
+                </select>
+            </div>
+            <div class="layui-input-inline layui-input-inline-mini layui-input-inline-group">
+                <input type="text" name="data[gather][sort][]" autocomplete="off" placeholder="排序" class="layui-input">
+            </div>
+            <a class="layui-btn layui-btn-primary" data-gather data-parts="true"><i class="layui-icon">&#xe654;</i>添加</a>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">下载管理</label>
+            <div class="layui-input-inline layui-input-inline-big layui-input-inline-group">
+                <input type="text" name="data[download][href][]" autocomplete="off" placeholder="地址" class="layui-input">
+            </div>
+            <div class="layui-input-inline layui-input-inline-mini layui-input-inline-group">
+                <input type="text" name="data[download][ext][]" autocomplete="off" placeholder="格式" class="layui-input">
+            </div>
+            <a class="layui-btn layui-btn-primary" data-download data-parts="true"><i class="layui-icon">&#xe654;</i>添加</a>
+        </div>
+
+        <div class="layui-form-item">
+            <a class="layui-btn" lay-submit="" lay-filter="save">保存</a>
+        </div>
+    </form>
+    <script id="download-input" type="text/html">
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-form-label-group"></label>
+            <div class="layui-input-inline layui-input-inline-big layui-input-inline-group">
+                <input type="text" name="data[download][href][]" autocomplete="off" placeholder="地址" class="layui-input">
+            </div>
+            <div class="layui-input-inline layui-input-inline-mini layui-input-inline-group">
+                <input type="text" name="data[download][ext][]" autocomplete="off" placeholder="格式" class="layui-input">
+            </div>
+            <a class="layui-btn layui-btn-primary" data-download data-parts="false"><i class="layui-icon">&#xe640;</i>删除</a>
+        </div>
+    </script>
+    <script id="gather-input" type="text/html">
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-form-label-group"></label>
+            <div class="layui-input-inline layui-input-inline-big layui-input-inline-group">
+                <select name="data[gather][gather_id][]" class="layui-input">
+                    <option value="">请选译</option>
+                    <option value="1">起点</option>
+                    <option value="2">顶点</option>
+                    <option value="3">书趣</option>
+                </select>
+            </div>
+            <div class="layui-input-inline layui-input-inline-mini layui-input-inline-group">
+                <input type="text" name="data[gather][sort][]" autocomplete="off" placeholder="排序" class="layui-input">
+            </div>
+            <a class="layui-btn layui-btn-primary" data-gather data-parts="false"><i class="layui-icon">&#xe640;</i>删除</a>
+        </div>
+    </script>
+    <script type="text/javascript">
+    layui.config({
+        base: './layui/lay/my-modules/',
+        version: '1489724249329'
+    }).use('global.body');
+
+    layui.define(['layer', 'jquery', 'laytpl', 'form'], function(exports) {
+        var $ = layui.jquery,
+            laytpl = layui.laytpl,
+            form = layui.form(),
+            layer = layui.layer;
+        /**
+         * 配件
+         * @method
+         * @DateTime 2017-03-04T16:32:41+0800
+         * @param    {[type]}                 ){                 } [description]
+         * @return   {[type]}                     [description]
+         */
+        $(document).on('click', '[data-download]', function() {
+            var $this = $(this),
+                $op = $(this).data('parts');
+            // 等于真新增
+            // 等于假删除
+            if ($op) {
+                // console.log($this.parent().parent());
+                laytpl($('#download-input').html()).render({}, function(html) {
+                    $this.parent().after(html);
+                });
+            } else {
+                $this.parent().remove();
+            }
+        });
+
+
+        /**
+         * 配件
+         * @method
+         * @DateTime 2017-03-04T16:32:41+0800
+         * @param    {[type]}                 ){                 } [description]
+         * @return   {[type]}                     [description]
+         */
+        $(document).on('click', '[data-gather]', function() {
+            var $this = $(this),
+                $op = $(this).data('parts');
+            // 等于真新增
+            // 等于假删除
+            if ($op) {
+                // console.log($this.parent().parent());
+                laytpl($('#gather-input').html()).render({}, function(html) {
+                    $this.parent().after(html);
+                    form.render('select')
+                });
+            } else {
+                $this.parent().remove();
+            }
+        });
+
+
+    });
+
+
+
+
+    var tagsChoose = function(itme) {
+        console.log(itme);
+    }
+    </script>
+</body>
+
+</html>

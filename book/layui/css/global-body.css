@@ -1,8 +1,23 @@
+body[iframe]{
+    padding: 15px;
+}
 .layui-icon .iconfont{
     font-size: 30px;
 }
 .field-tip{
     color: red;
+}
+.layui-field-title{
+    margin: 10px 0 10px;
+}
+.layui-form[search] .layui-form-item{
+    margin-top: -10px;
+}
+.layui-form[search] .layui-form-item .layui-input-inline{
+    margin-top: 10px;
+}
+.layui-form[search] .layui-form-item .layui-form-label{
+    margin-top: 10px;
 }
 .layui-form-pane .layui-input-inline[pane] {
     position: relative;
@@ -18,4 +33,157 @@
 }
 td[colspan]{
     text-align: center;
+}
+.layui-btn[disabled], .layui-btn[disabled]:active, .layui-btn[disabled]:hover {
+    border: 1px solid #e6e6e6;
+    background-color: #FBFBFB;
+    color: #C9C9C9;
+    cursor: not-allowed;
+    opacity: 1;
+}
+.layui-form-item {
+    max-width: 1000px;
+}
+.layui-form-item .layui-input-inline-mini{
+    width: 70px;
+}
+.layui-form-item .layui-input-inline-big{
+    width: 310px;
+}
+.layui-form-pane .layui-form-text .layui-textarea{
+    min-height: 200px;
+}
+.layui-form-item .layui-input-inline-group .layui-input{
+    margin-left: 10px;
+}
+.layui-form-item .layui-input-inline-group+.layui-btn{
+    float: left;
+    position: relative;
+    border-color:#e6e6e6;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-left: none;
+}
+.layui-form-item .layui-form-label-group{
+    border: none;
+}
+.site-demo-upload {
+    position: relative;
+    background: #e2e2e2;
+    margin-left: 5px;
+    display: inline-block;
+}
+.layui-form-item[image] img{
+    display: none;
+}
+.layui-form-text-inline{
+    float: none;
+    /* width: 200px; */
+    border-radius: 2px;
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    text-align: left;
+}
+.layui-form-pane .layui-form-text-inline .layui-form-label {
+    float: none;
+    width: 100%;
+    border-right: 1px solid #e6e6e6;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    text-align: center;
+}
+.site-demo-upload .layui-upload-button {
+    background-color: rgba(0,0,0,.2);
+    color: rgba(255,255,255,1);
+    outline: 0;
+    -webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    transition: border-color .3s cubic-bezier(.65,.05,.35,.5);
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+}
+.site-demo-upload .site-demo-upbar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -18px 0 0 -56px;
+}
+.layui-upload-button {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 60px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #DFDFDF;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #666;
+}
+.layui-input-inline[image] .site-demo-upload{
+    margin-left: 0px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.form-item-group > .layui-input-inline{
+    float: none;
+}
+.form-item-group.form-item-group-image-desc{
+    margin-left: 210px;
+    float: none;
+}
+.form-item-group{
+    float: left;
+}
+.layui-input-block[pane]{
+    width: 100%;
+    max-width: 750px;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    float: left;
+}
+.layui-input-block[pane]+.layui-btn{
+    float: left;
+    position: relative;
+    left: -1px;
+    border-color:#e6e6e6;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-left: none;
+}
+
+.layui-input-block[pane] > span.tag {
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #a5d24a;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    display: block;
+    float: left;
+    padding: 5px;
+    text-decoration: none;
+    background: #cde69c;
+    color: #2F4056;
+    margin-right: 5px;
+    margin-top: 2px;
+    font-size: 13px;
+    margin-left: 5px;
+}
+.layui-input-block[pane] > span.tag > a {
+    margin-left: 2px;
+    font-weight: bold;
+    color: #82ad2b;
+    text-decoration: none;
+    font-size: 11px;
 }

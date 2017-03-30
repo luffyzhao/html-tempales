@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>颜如玉后台管理平台-标签管理</title>
+    <title>颜如玉后台管理平台-书籍管理</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,22 +19,38 @@
 
 <body>
     <fieldset class="layui-elem-field layui-field-title">
-        <legend>书籍标签搜索</legend>
+        <legend>书籍搜索</legend>
     </fieldset>
     <form class="layui-form layui-form-pane" action="#" search>
         <div class="layui-form-item">
-            <label class="layui-form-label">标签名称</label>
+            <label class="layui-form-label">书籍名称</label>
             <div class="layui-input-inline">
-                <input type="text" name="search[name]" autocomplete="off" placeholder="标签名称" class="layui-input">
+                <input type="text" name="search[name]" autocomplete="off" placeholder="书籍名称" class="layui-input">
+            </div>
+            <label class="layui-form-label">作者名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="search[author]" autocomplete="off" placeholder="作者名称" class="layui-input">
+            </div>
+            <label class="layui-form-label">书籍标签</label>
+            <div class="layui-input-inline">
+                <input type="text" name="search[tags]" autocomplete="off" placeholder="书籍标签" class="layui-input">
+            </div>
+            <label class="layui-form-label">完结状态</label>
+            <div class="layui-input-inline">
+                <select name="search[status]">
+                    <option value="">请选择</option>
+                    <option value="1">完结</option>
+                    <option value="0">连载</option>
+                </select>
             </div>
             <div class="layui-input-inline layui-btn-group">
                 <button class="layui-btn layui-btn-primary" lay-submit="" data-elem=".layui-body-table" lay-filter="search"><i class="iconfont icon-originalimage"></i></button>
-                <a class="layui-btn layui-btn-primary" href="tags-add.html"><i class="layui-icon">&#xe654;</i></a>
+                <a class="layui-btn layui-btn-primary" href="book-add.html"><i class="layui-icon">&#xe654;</i></a>
             </div>
         </div>
     </form>
     <fieldset class="layui-elem-field layui-field-title">
-        <legend>书籍标签列表</legend>
+        <legend>书籍列表</legend>
     </fieldset>
 
     <table class="layui-table" lay-skin="line">
@@ -46,11 +62,14 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>标签名称</th>
+                <th>书籍名称</th>
+                <th>作者</th>
+                <th>标签</th>
+                <th>完结状态</th>
                 <th>操作</th>
             </tr>
         </thead>
-        <tbody class="layui-body-table" data-url="./data/tags.json" data-elem=".layui-body-table">
+        <tbody class="layui-body-table" data-url="./data/book.json" data-elem=".layui-body-table">
             
         </tbody>
         <script type="text/html" class="layui-body-table-script">
@@ -58,8 +77,18 @@
                 <tr>
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
+                    <td>{{ item.tags }}</td>
+                    <td>{{ item.author }}</td>
+                    {{# if(item.status == 0){ }}
+                    <td>连载</td>
+                    {{# }else{ }}
+                    <td>完结</td>
+                    {{# } }}
                     <td>
-                        <a class="layui-btn layui-btn-primary layui-btn-small" href="tags-add.html">
+                        <a class="layui-btn layui-btn-primary layui-btn-small" href="book-chapter.html">
+                            <i class="iconfont icon-text"></i>
+                        </a>
+                        <a class="layui-btn layui-btn-primary layui-btn-small" href="book-add.html">
                             <i class="layui-icon">&#xe642;</i>
                         </a>
                         <a class="layui-btn layui-btn-primary layui-btn-small" href="#" layui-delete>

@@ -1,4 +1,4 @@
-layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage','verify'], function(exports) {
+layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl', 'laypage', 'verify','upload'], function(exports) {
     var $ = layui.jquery,
         layer = layui.layer,
         form = layui.form(),
@@ -43,69 +43,69 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage','ve
          * @return   {Function}                     [description]
          */
     layui.done = function($data) {
-        if ($data.code == 0) {
-            // 失败不跳转
-            layer.msg($data.msg, { icon: 5 });
-        } else if($data.code == 1){
-            // 成功跳转
-            layer.msg($data.msg, { icon: 1 });
-            window.location.href = $data.url;
-        }
-    }
-    /**
-     * 列表页面数据加载
-     * @method   list
-     * @DateTime 2017-03-28T16:40:43+0800
-     * @param    {[type]}                 el     [description]
-     * @param    {[type]}                 params [description]
-     * @return   {[type]}                        [description]
-     */
-    layui.list = function(el,params){
-        // 有设置data-elem用elem
-        if(typeof(el.data('elem')) != 'undefined'){
-            el = $(el.data('elem')).length > 0 ? $(el.data('elem')).eq(0) : el;
-        }
-        var dataUrl = typeof(el.data('url')) == 'undefined' ? document.URL : el.data('url');
-        $.ajax({
-            "url": dataUrl,
-            "type": 'POST',
-            "dataType": 'json',
-            "data":params
-        }).done(function($data) {
-            if($data.code == 1 && $data.data.data.length > 0){
-                laytpl(el.next('script.layui-body-table-script').html()).render($data, function(html) {
-                    el.html(html);
-                });
-            }else if($data.code == 0){
-                el.html('<tr><td colspan="'+el.prev().find('th').length+'">'+$data.msg+'</td></tr>');
-            }else{
-                el.html('<tr><td colspan="'+el.prev().find('th').length+'">没有数据了哟！</td></tr>');
+            if ($data.code == 0) {
+                // 失败不跳转
+                layer.msg($data.msg, { icon: 5 });
+            } else if ($data.code == 1) {
+                // 成功跳转
+                layer.msg($data.msg, { icon: 1 });
+                window.location.href = $data.url;
             }
+        }
+        /**
+         * 列表页面数据加载
+         * @method   list
+         * @DateTime 2017-03-28T16:40:43+0800
+         * @param    {[type]}                 el     [description]
+         * @param    {[type]}                 params [description]
+         * @return   {[type]}                        [description]
+         */
+    layui.list = function(el, params) {
+            // 有设置data-elem用elem
+            if (typeof(el.data('elem')) != 'undefined') {
+                el = $(el.data('elem')).length > 0 ? $(el.data('elem')).eq(0) : el;
+            }
+            var dataUrl = typeof(el.data('url')) == 'undefined' ? document.URL : el.data('url');
+            $.ajax({
+                "url": dataUrl,
+                "type": 'POST',
+                "dataType": 'json',
+                "data": params
+            }).done(function($data) {
+                if ($data.code == 1 && $data.data.data.length > 0) {
+                    laytpl(el.next('script.layui-body-table-script').html()).render($data, function(html) {
+                        el.html(html);
+                    });
+                } else if ($data.code == 0) {
+                    el.html('<tr><td colspan="' + el.prev().find('th').length + '">' + $data.msg + '</td></tr>');
+                } else {
+                    el.html('<tr><td colspan="' + el.prev().find('th').length + '">没有数据了哟！</td></tr>');
+                }
 
-            if($data.data.pages.pages > 1){
-                var pageCont = el.parents('.layui-table').next('[lay-page]');
-                layui.laypage({
-                    "cont":pageCont,
-                    "curr":$data.data.pages.curr,
-                    "pages":$data.data.pages.pages,
-                    "jump":function(obj, first){
-                        if(first){
-                            return true;
+                if ($data.data.pages.pages > 1) {
+                    var pageCont = el.parents('.layui-table').next('[lay-page]');
+                    layui.laypage({
+                        "cont": pageCont,
+                        "curr": $data.data.pages.curr,
+                        "pages": $data.data.pages.pages,
+                        "jump": function(obj, first) {
+                            if (first) {
+                                return true;
+                            }
+                            params.page = obj.curr;
+                            layui.list(el, params);
                         }
-                        params.page = obj.curr;
-                        layui.list(el,params);
-                    }
-                });
-            }
-        });
-    }
-    /**
-     * ajax 请求准备后，发送前
-     * @method
-     * @DateTime 2017-03-28T13:57:24+0800
-     * @param    {[type]}                 ){                     layer.load(0,{shade:[0.1,"#fff"]});    } [description]
-     * @return   {[type]}                     [description]
-     */
+                    });
+                }
+            });
+        }
+        /**
+         * ajax 请求准备后，发送前
+         * @method
+         * @DateTime 2017-03-28T13:57:24+0800
+         * @param    {[type]}                 ){                     layer.load(0,{shade:[0.1,"#fff"]});    } [description]
+         * @return   {[type]}                     [description]
+         */
     $(document).ajaxStart(function() {
         layer.load(0, { shade: [0.1, "#fff"] });
     });
@@ -142,7 +142,6 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage','ve
         var action = typeof(data.form.action) == 'undefined' ? document.URL : data.form.action,
             method = typeof(data.form.method) == 'undefined' ? 'post' : data.form.method,
             params = JSON.stringify(data.field);
-        console.log(11);
         $.ajax({
             "url": action,
             "type": 'POST',
@@ -160,7 +159,7 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage','ve
      * @return   {[type]}                       [description]
      */
     form.on('submit(search)', function(data) {
-        layui.list($(data.elem),data.field);
+        layui.list($(data.elem), data.field);
         return false;
     });
     /**
@@ -186,6 +185,96 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage','ve
             }).done(layui.done);
         });
     });
+    /**
+     * iframe 弹出 
+     * @method
+     * @DateTime 2017-03-29T11:43:54+0800
+     * @param    {[type]}                 event) {                   event.preventDefault();        var url [description]
+     * @return   {[type]}                        [description]
+     */
+    $(document).on('click', '[data-iframe]', function(event) {
+        event.preventDefault();
+        var url = $(this).data('url'),
+            params = $(this).data('params');
+        if (typeof(params) == 'object') {
+            params = encodeURI(JSON.stringify(params));
+        }
+        /* Act on the event */
+        layer.open({
+            type: 2,
+            icon: 1,
+            area: ['900px', '700px'],
+            content: [url + '?params=' + params, 'no']
+        });
+    });
+    /**
+     * 文件上传
+     * @method   success
+     * @DateTime 2017-03-29T15:27:28+0800
+     * @param    {[type]}                 res){                       LAY_demo_upload.src [description]
+     * @return   {[type]}                        [description]
+     */
+    layui.upload({
+        url: '/index/upload' //上传接口,
+        ,method: 'post',
+        ext: 'jpg|png|gif',
+        elem: '.layui-upload-file-image',
+        before: function(input) {
+            layer.load(0, { shade: false });
+        },
+        success: function(res, input) { //上传成功后的回调
+            layer.close('loading');
+            if (res.code == 0) {
+                layer.msg('文件上传失败！！', { time: 5000, icon: 5 });
+                return false;
+            }
+            var $img = $(input).parents('.site-demo-upload').children('img');
+            if($img.length > 0){
+                $img.attr('src', res.data.src);
+            }else{
+                $(input).parents('.site-demo-upload').prepend('<img src="'+res.data.src+'" />');
+            }
+            $(input).parents('.site-demo-upload').children('input[type="hidden"]').val(res.data.src);
+        },
+        error:function(){
+            layer.msg('文件上传失败！');
+            layer.close('loading');
+        }
+    });
+    /**
+     * 删除标签 
+     * @method
+     * @DateTime 2017-03-29T16:17:22+0800
+     * @param    {[type]}                 event){                     event.preventDefault();    } [description]
+     * @return   {[type]}                          [description]
+     */
+    $(document).on('click','span.tag a', function(event){
+        event.preventDefault();
+        $(this).parent().remove();
+    });
+    /**
+     * iframe choose
+     * @method
+     * @DateTime 2017-03-29T11:47:42+0800
+     * @param    {[type]}                 event) {                   event.preventDefault();        var url [description]
+     * @return   {[type]}                        [description]
+     */
+    $(document).on('click', '[layui-iframe-choose]', function(event) {
+        event.preventDefault();
+        var callBack = $(this).data('callback'),
+            func = 'window.parent.' + callBack,
+            item = $(this).data('item');
+
+        if (eval('typeof(' + func + ')== "undefined"')) {
+            layer.msg('系统错误，请联系管理员！');
+            return false;
+        }
+        eval(func + '(' + JSON.stringify(item) + ')');
+        if ($(this).attr('multiple') != 'multiple') {
+            window.parent.layer.closeAll('iframe');
+        }
+        $(this).attr('disabled', 'disabled');
+    });
 
     /**
      * 页面加载完毕最后的处理的一些东西
@@ -203,10 +292,9 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl','laypage','ve
          * @return   {[type]}                                               [description]
          */
         $('.layui-body-table').each(function(index, el) {
-            layui.list($(el),{});
+            layui.list($(el), {});
         });
     });
-    
 
     util.fixbar();
     exports('global.body', {});
