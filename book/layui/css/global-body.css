@@ -1,11 +1,44 @@
 body[iframe]{
     padding: 15px;
 }
+body[login]{
+    background-color: #2e2e38;
+}
+body[login] .layui-form{
+    background-color: #fff;
+    padding: 25px;
+    width: 310px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body[login] .layui-input,body[login] .layui-select,body[login] .layui-textarea,body[login] .layui-form-pane .layui-form-label{
+    border: 1px solid #bfbfbf;
+    border-radius: 0;
+}
+body[login] .layui-form h3 {
+    color: #07ca61;
+    text-align: center;
+    font-weight: 500;
+    margin: 0px 0px 15px 0px;
+    font-size: 18px;
+}
+body[login] .layui-form .layui-form-title{
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
 .layui-icon .iconfont{
     font-size: 30px;
 }
 .field-tip{
     color: red;
+}
+.layui-form-captcha{
+    float: left;
+    display: block;
+    margin-right: 10px;
 }
 .layui-field-title{
     margin: 10px 0 10px;
@@ -65,7 +98,7 @@ td[colspan]{
     border-left: none;
 }
 .layui-form-item .layui-form-label-group{
-    border: none;
+    border: none!important;
 }
 .site-demo-upload {
     position: relative;
