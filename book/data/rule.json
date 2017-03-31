@@ -8,16 +8,12 @@
         },
         "data":[
             {
-                "name" : "帅哥美女无敌组1",
+                "name" : "user",
+                "title" : "用户管理",
+                "icon" : "iconfont icon-accountfilling",
+                "islink" : 1,
+                "sort" : 5,
                 "id": 1
-            },
-            {
-                "name" : "帅哥美女无敌组2",
-                "id": 2
-            },
-            {
-                "name" : "帅哥美女无敌组3",
-                "id": 3
             }
         ]
     }

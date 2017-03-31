@@ -146,7 +146,7 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl', 'laypage', '
             "url": action,
             "type": 'POST',
             "dataType": 'json',
-            "data": params,
+            "data": data.field,
         }).done(layui.done);
         return false;
     });

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>颜如玉后台管理平台-菜单权限管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="./layui/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./layui/css/global-body.css">
+    <link href="./favicon.ico" rel="shortcut icon">
+    <script src="./layui/layui.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>菜单权限添加</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" method="post" action="/">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>菜单名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[title]" lay-verify="rulename" autocomplete="off" placeholder="菜单名称" class="layui-input">
+            </div>
+            <label class="layui-form-label"><span class="field-tip">*</span>url地址</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[name]" lay-verify="rule" autocomplete="off" placeholder="url地址" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单图标</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[icon]" autocomplete="off" placeholder="菜单图标" class="layui-input">
+            </div>
+            <label class="layui-form-label">菜单排序</label>
+            <div class="layui-input-inline">
+                <input type="text" name="data[sort]" lay-verify="sort" value="255" autocomplete="off" placeholder="菜单排序" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="field-tip">*</span>是否菜单</label>
+            <div class="layui-input-inline">
+                <input type="checkbox" name="islink" lay-skin="switch" lay-text="ON|OFF">
+            </div>
+            <label class="layui-form-label"><span class="field-tip">*</span>是否管理员</label>
+            <div class="layui-input-inline">
+                <input type="checkbox" name="isadmin" lay-skin="switch" lay-text="ON|OFF">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <a class="layui-btn" lay-submit="" lay-filter="save">保存</a>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        layui.config({
+            base: './layui/lay/my-modules/',
+            version: '1489724249329'
+        }).use('global.body');
+    </script>
+</body>
+
+</html>
