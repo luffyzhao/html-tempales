@@ -7,7 +7,7 @@ layui.define(['jquery', 'form'], function(exports) {
         rule: [/[a-z]{2,15}/, '菜单名称必须2到15个字母'],
         rulename: [/^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]{2,10}$/, '菜单名称必须2到10位'],
         tags: [/^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]{2,10}$/, '标签名称必须2到10位'],
-        sort :[/^[0-9]{1,3}/,'排序只有全部数字并且最多三位']
+        sort :[/^[0-9]{1,3}/,'排序只有全部数字并且最多三位'],
         captcha: [/^[0-9a-zA-Z]{4}$/, '验证码必须为4位数字或者字母'],
         pass: function(value) {
             if(value != ''){
