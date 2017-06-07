@@ -1,0 +1,164 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Uimaker CMS 网站内容管理系统</title>
+    <link rel="stylesheet" type="text/css" href="./css/admin_style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/skins/tpphp.css" />
+    <link rel="stylesheet" type="text/css" href="./css/right_style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/select.css" />
+    <link rel="stylesheet" type="text/css" href="./js/colorbox/colorbox.css" />
+    <script src="./js/jquery-1.4.4.min.js"></script>
+    <script src="./js/jquery.stonecms.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="./js/select-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top_about">
+            <a href="#" class="help1" id="btn2">使用帮助</a>
+            <a href="#" class="help2">关于</a>
+        </div>
+        <div class="admin_logo">
+            <img src="./images/admin_logo.jpg">
+        </div>
+        <div class="top_nav">
+            <ul>
+                <li><a href="#" class="selected">首页</a></li>
+                <li><a href="#">首页2</a></li>
+            </ul>
+        </div>
+        <div class="top_member">
+            欢迎您，Admin | <a href="#">帐号管理</a> | <a href="#">编辑</a> | <a href="#">2条信息</a>
+        </div>
+    </div>
+    <div class="side_switch" id="side_switch">
+    </div>
+    <div class="side_switchl" id="side_switchl">
+    </div>
+    <div class="left" id="left">
+        <div class="member_info">
+            <div class="member_ico">
+                <img src="./images/a.png" width="43" height="43">
+            </div>
+            <a class="system_a" href="">系统设置</a>
+            <a href="" class="system_log">注销</a>
+            <a href="#" class="system_logout">退出</a>
+        </div>
+        <div class="left_title">我的面板</div>
+        <ul class="side">
+            <li><a href="#" class="selected">我的面板1</a></li>
+            <li><a href="#">我的面板2</a></li>
+        </ul>
+        <ul class="side catsub">
+            <li class="feed"><a href="http://www.uimaker.com">网站订阅查看</a></li>
+            <li class="side_about"><a href="#">版权声明</a></li>
+        </ul>
+    </div>
+    <div class="right" id="right">
+        <div class="right_body">
+            <div class="body">
+                <script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+                <div class="top_subnav">CMS内容管理平台 ＞ 首页 ＞ 商品列表</div>
+                <div class="rightinfo">
+                    <div class="tools">
+                        <ul class="toolbar">
+                            <li class="click"><span><img src="images/t01.png" /></span>商品列表</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="usual1">
+                    <form method="post">
+                        <div class="formbody">
+                            <div class="itab">
+                                <ul>
+                                    <li><a href="#tab1" class="selected">基本选项</a></li>
+                                    <li><a href="#tab2">SEO设置</a></li>
+                                </ul>
+                            </div>
+                            <!-- <div class="formtext">Hi，<b>admin</b>，欢迎您试用信息发布功能！</div> -->
+                            <div id="tab1" class="tabson">
+                                <ul class="forminfo">
+                                    <li>
+                                        <label>分类名称<b>*</b></label>
+                                        <input value="" name="cate_name" type="text" class="dfinput" />
+                                        <i>名称不能超过10个字符</i>
+                                    </li>
+                                    <li>
+                                        <li>
+                                            <label>目录<b>*</b></label>
+                                            <input name="cate_url" value="" type="text" class="dfinput" />
+                                            <i>名称只能是字母或者数字,并且以字母开头</i>
+                                        </li>
+                                        <li>
+                                            <label>二级域名<b>*</b></label>
+                                            <input name="cate_domain" type="text" class="dfinput" value="" />
+                                            <i>名称只能是字母或者数字,并且以字母开头</i>
+                                        </li>
+                                        <li>
+                                            <label>上级栏目<b>*</b></label>
+                                            <div class="vocation">
+                                                <select class="select1" name="parent_id">
+                                                    <option value="0">≡ 作为一级栏目 ≡</option>
+                                                    <option value="1" selected>= 武侠 =</option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label>描述</label>
+                                            <textarea name="cate_desc" cols="" rows="" class="textinput"></textarea>
+                                        </li>
+                                </ul>
+                            </div>
+                            <div id="tab2" class="tabson">
+                                <ul class="forminfo">
+                                    <li>
+                                        <label class="w1">META Title（栏目标题）</label>
+                                        <input name="meta_title" type="text" class="dfinput" value="" /><i>针对搜索引擎设置的标题</i></li>
+                                    <li>
+                                        <li>
+                                            <label class="w1">META Keywords（栏目关键词）</label>
+                                            <input name="meta_keywords" type="text" class="dfinput" value="" /><i>关键字中间用半角逗号隔开</i></li>
+                                        <li>
+                                            <li>
+                                                <label class="w1">META Description（栏目描述）</label>
+                                                <textarea name="meta_description" cols="" rows="" class="textinput"></textarea><i>针对搜索引擎设置的网页描述</i></li>
+                                            <li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="seachform">
+                                    <li>
+                                        <label>&nbsp;</label>
+                                        <input type="submit" class="btn" value="确认保存" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <script type="text/javascript">
+                $("#usual1 ul").idTabs();
+                </script>
+                <script type="text/javascript">
+                $(document).ready(function(e) {
+                    $(".select1").uedSelect({
+                        width: 345
+                    });
+                    $(".select2").uedSelect({
+                        width: 167
+                    });
+                    $(".select3").uedSelect({
+                        width: 100
+                    });
+
+                });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

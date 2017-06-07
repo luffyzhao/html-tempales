@@ -198,6 +198,8 @@ layui.define(['layer', 'code', 'form', 'element', 'util', 'laytpl', 'laypage', '
             params = $(this).data('params');
         if (typeof(params) == 'object') {
             params = encodeURI(JSON.stringify(params));
+        }elseif(typeof(params) == 'string'){
+            params = encodeURI(eval(params+"();"));
         }
         /* Act on the event */
         layer.open({
