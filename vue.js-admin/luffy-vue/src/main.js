@@ -21,6 +21,23 @@ Vue.use(VueRouter)
 Vue.use(ElementUI)
 // 加载http请求
 Vue.use(VueResource)
+// http 栏截
+Vue.http.interceptors.push(function (request, next) {
+  request.url = 'http://localhost:8080/' + request.getUrl()
+  var that = this
+  that.loading = true
+  next((response) => {
+    that.loading = false
+    if (response.body.code === 0) {
+      that.$notify.error({
+        title: '错误',
+        message: response.body.msg
+      })
+    }
+    return response
+  })
+})
+
 // 定义路由映射
 const router = new VueRouter({
   routes: [{

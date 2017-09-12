@@ -27,7 +27,7 @@
       <div class="router-box-scroll">
         <fieldset>
           <legend>搜索表单</legend>
-          <el-table :data="list.data" height="100%">
+          <el-table :data="list.page.data" height="100%" v-loading.body="loading">
             <el-table-column prop="date" label="日期">
             </el-table-column>
             <el-table-column prop="name" label="姓名">
@@ -40,10 +40,11 @@
             </el-table-column>
             <el-table-column prop="zip" label="邮编">
             </el-table-column>
-            <el-table-column label="操作" width="100">
+            <el-table-column label="操作" width="150">
               <template scope="scope">
                 <el-button type="text" size="small">查看</el-button>
                 <el-button type="text" size="small">编辑</el-button>
+                <el-button type="text" size="small">删除</el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -51,7 +52,7 @@
       </div>
     </div>
     <div class="router-footer">
-      <page :model="list"></page>
+      <page :model="list" v-on:pageSubmit="onSubmit"></page>
     </div>
   </div>
 </template>
@@ -64,44 +65,36 @@ export default {
     'page': Page
   },
   beforeRouteEnter (to, from, next) {
-    next(vm => {
-      vm.list.data = [{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      }]
+    next(that => {
+      that.onSubmit()
     })
   },
   methods: {
     onSubmit (event) {
-      this.list.data = [{
-        date: '2016-05-03',
-        name: '王小虎',
-        province: '上海',
-        city: '普陀区',
-        address: '上海市普陀区金沙江路 1518 弄',
-        zip: 200333
-      }]
+      var that = this
+      // that.$axios.get('static/cms/list.json')
+      that.$http.get('static/cms/list.json', {params: that.$data.list.param}).then(function (response) {
+        that.list.page = response.body.data
+      }, function (response) {
+        that.list.page = []
+      })
     }
   },
   data () {
     return {
       breadcrumb: ['列表'],
+      loading: false,
       list: {
-        url: 'http://www.baidu.com/',
         param: {
           user: '',
-          region: ''
+          region: '',
+          current: 1,
+          size: 100
         },
         page: {
-          current: 1,
-          size: 100,
+          data: [],
           total: 1000
-        },
-        data: []
+        }
       }
     }
   }

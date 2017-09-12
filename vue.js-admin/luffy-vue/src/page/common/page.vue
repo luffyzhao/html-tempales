@@ -3,9 +3,9 @@
         <el-pagination
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
-          :current-page="model.page.current"
+          :current-page="model.param.current"
           :page-sizes="[100, 200, 300, 400]"
-          :page-size="model.page.size"
+          :page-size="model.param.size"
           layout="total, sizes, prev, pager, next, jumper"
           :total="model.page.total">
         </el-pagination>
@@ -18,11 +18,10 @@ export default {
   props: ['model'],
   methods: {
     handleSizeChange (val) {
-      console.log(this.model)
+      this.$emit('pageSubmit')
     },
     handleCurrentChange (val) {
-      console.log(this.model)
-      this.model.data = []
+      this.$emit('pageSubmit')
     }
   }
 }
