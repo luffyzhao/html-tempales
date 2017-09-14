@@ -1,11 +1,13 @@
 <template>
   <div class="content-right">
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item  v-for="(item, index) in breadcrumb" >{{item}}</el-breadcrumb-item>
-    </el-breadcrumb>
-
-
+    <div class="router-box">
+      <div class="router-box-header">
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="(item, index) in breadcrumb">{{item}}</el-breadcrumb-item>
+        </el-breadcrumb>
+      </div>
+    </div>
   </div>
 </template>
 

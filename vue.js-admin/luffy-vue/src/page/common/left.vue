@@ -50,22 +50,6 @@ export default {
 
 
 <style type="text/css">
-  .content-left{
-    flex-basis: 180px;
-    height: 100%;
-    background-color: #293038;
-    color: #aeb9c2;
-    line-height: 40px !important;
-    font-size: 12px;
-    transition: flex-basis 0.25s;
-    -moz-transition: flex-basis 0.25s; /* Firefox */
-    -webkit-transition: flex-basis 0.25s;  /* Safari 鍜� Chrome */
-    -o-transition: flex-basis 0.25s;   /* Opera */
-  }
-  .content-left-min{
-    flex-basis: 50px;
-    overflow: hidden;
-  }
   .content-left-fold{
     background: #394555;
     height: 40px;

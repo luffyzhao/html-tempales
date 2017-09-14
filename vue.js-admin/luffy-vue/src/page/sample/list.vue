@@ -1,13 +1,14 @@
 <template>
   <div class="content-right">
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item v-for="(item, index) in breadcrumb">{{item}}</el-breadcrumb-item>
-    </el-breadcrumb>
     <div class="router-box">
+      <div class="router-box-header">
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="(item, index) in breadcrumb">{{item}}</el-breadcrumb-item>
+        </el-breadcrumb>
+      </div>
+
       <div class="router-box-search">
-        <fieldset>
-          <legend>搜索表单</legend>
           <el-form :inline="true" :model="list.param" class="demo-form-inline">
             <el-form-item label="审批人">
               <el-input v-model="list.param.user" placeholder="审批人"></el-input>
@@ -18,15 +19,16 @@
                 <el-option label="区域二" value="beijing"></el-option>
               </el-select>
             </el-form-item>
-            <el-form-item>
-              <el-button type="primary" @click="onSubmit">查询</el-button>
-            </el-form-item>
+            <div class="router-box-search-btn">
+              <el-form-item>
+                <el-button type="primary" @click="onSubmit">查询</el-button>
+              </el-form-item>
+            </div>
+            
           </el-form>
-        </fieldset>
       </div>
-      <div class="router-box-scroll">
-        <fieldset>
-          <legend>搜索表单</legend>
+      
+      <div class="router-box-table">
           <el-table :data="list.page.data" height="100%" v-loading.body="loading">
             <el-table-column prop="date" label="日期">
             </el-table-column>
@@ -48,32 +50,44 @@
               </template>
             </el-table-column>
           </el-table>
-        </fieldset>
       </div>
     </div>
     <div class="router-footer">
-      <page :model="list" v-on:pageSubmit="onSubmit"></page>
+      <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="list.param.current"
+          :page-sizes="[100, 200, 300, 400]"
+          :page-size="list.param.size"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="list.page.total">
+        </el-pagination>
     </div>
   </div>
 </template>
 <script>
-import Page from '../common/page.vue'
 
 export default {
   name: 'list',
-  components: {
-    'page': Page
-  },
   beforeRouteEnter (to, from, next) {
     next(that => {
       that.onSubmit()
     })
   },
   methods: {
+    handleSizeChange (val) {
+      var that = this
+      that.list.param.size = val
+      that.onSubmit()
+    },
+    handleCurrentChange (val) {
+      var that = this
+      that.list.param.current = val
+      that.onSubmit()
+    },
     onSubmit (event) {
       var that = this
-      // that.$axios.get('static/cms/list.json')
-      that.$http.get('static/cms/list.json', {params: that.$data.list.param}).then(function (response) {
+      that.$http.get('/static/cms/list.json', {params: that.list.param}).then(function (response) {
         that.list.page = response.body.data
       }, function (response) {
         that.list.page = []

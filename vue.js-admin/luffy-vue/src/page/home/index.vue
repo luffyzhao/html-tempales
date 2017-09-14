@@ -24,10 +24,10 @@ export default {
 <style type="text/css">
     html,body, .box, .content, .content-right{
         height: 100%;
+        overflow: hidden;
     }
     .content{
         position: absolute;
-        display: flex;
         box-sizing: border-box;
         padding-top: 50px;
         top: 0px;
@@ -35,63 +35,55 @@ export default {
         width: 100%;
     }
     .content-right{
-        flex: 1;
+        width: 100%;
         box-sizing: border-box;
-        padding-left: 15px;
         padding-right: 15px;
         background: #eaedf1;
         position: relative;
-        display: flex;
-        flex-direction: column;
+        padding-left: 195px;
+        display: inline-block;
+        vertical-align: top;
     }
-    .el-breadcrumb{
-        flex-basis: 29px;
-        line-height: 29px;
-        padding-left: 15px;
-        list-style: none;
-        background-color: #f5f5f5;
-        border-radius: 4px;
+    .content-left{
+      position: absolute;
+      z-index: 99;
+      top: 50px;
+      left: 0;
+      display: inline-block;
+      vertical-align: top;
+      width: 180px;
+      height: 100%;
+      background-color: #293038;
+      color: #aeb9c2;
+      line-height: 40px !important;
+      font-size: 12px;
+      transition: flex-basis 0.25s;
+      -moz-transition: flex-basis 0.25s; /* Firefox */
+      -webkit-transition: flex-basis 0.25s;  /* Safari 鍜� Chrome */
+      -o-transition: flex-basis 0.25s;   /* Opera */
     }
+    .content-left-min{
+      width: 50px;
+      overflow: hidden;
+    }
+    .content-left-min~.content-right{
+      padding-left: 65px;
+    }
+    
     .router-box{
-      flex: 1;
+      height: 100%;
       width: 100%;
-      background-color: #f5f5f5;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-      padding: 15px;
+      padding-bottom: 65px;
       box-sizing: border-box;
       overflow: hidden;
-      flex-direction: column;
-      display: flex;
-    }
-    .router-box-search{
-      margin-bottom: 15px; 
-    }
-    .router-box .router-box-scroll{
-      overflow: hidden;
-      flex: 1;
-    }
-    .router-box .router-box-scroll .el-table{
-      height: 95%;
-    }
-    .el-table__body-wrapper::-webkit-scrollbar-track
-    {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-      background-color: #F5F5F5;
-    }
-    .el-table__body-wrapper::-webkit-scrollbar
-    {
-      width: 6px;
-      background-color: #F5F5F5;
-    }
-
-    .el-table__body-wrapper::-webkit-scrollbar-thumb
-    {
-      background-color: #000000;
+      flex-flow: column;
+      display:flex;
     }
     .router-footer{
-      flex-basis: 50px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 50px;
       width: 100%;
       background-color: #f5f5f5;
     }
@@ -100,17 +92,62 @@ export default {
       line-height: 0;
       content: "";
     }
+    .router-box-header,.router-box-table,.router-box-search,.router-box-form,.router-box-btn{
+      padding: 15px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      background-color: #f5f5f5;
+      overflow: hidden;
+    }
+    .router-box-header{
+      padding: 0;
+      height: 30px;
+      margin-bottom: 15px;
+    }
+    .router-box-header .el-breadcrumb{
+        line-height: 30px;
+        padding-left: 15px;
+        list-style: none;
+    }
+    .router-box-search{
+      background-color: #f5f5f5;
+      margin-bottom: 15px;
+    }
+    .router-box-search .el-form-item{
+      margin-bottom: 15px;
+    }
+    .router-box-search .router-box-search-btn > .el-form-item{
+      float: right;
+      margin-bottom: 0px;
+    }
+    .router-box-table,.router-box-form{
+      flex: 1;
+    }
+    .router-box-form .el-form{
+      overflow: auto;
+      height: 100%;
+    }
+    .router-box-form .el-form > fieldset{
+      margin-bottom: 15px;
+    }
+    .router-box .router-box-table .el-table{
+      height: 95%;
+    }
+    .footer-btn{
+
+    }
     .el-form-item{
       max-width: 440px;
     }
     .el-checkbox-group .el-checkbox{
       margin-left: 15px;
     }
-
-    .router-footer .el-pagination{
+    .router-footer .el-pagination,.router-footer .footer-btn{
       display: inline-block;
       float: right;
       margin-top: 9px;
+      margin-right: 15px;
     }
 </style>
 

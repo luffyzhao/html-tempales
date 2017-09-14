@@ -33,7 +33,7 @@ export default {
       padding: 10px;
       border: 1px solid #bfcbd9;
       /* border-radius: 4px; */
-      height: 100%;
+      /* height: 100%; */
       box-sizing: border-box;
     }
     .float-row:after{
@@ -65,5 +65,20 @@ export default {
       border-right: 4px solid transparent;
       border-left: 4px solid transparent;
   }
-  
+  .el-table__body-wrapper::-webkit-scrollbar-track,.el-form::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    height: 6px;
+    background-color: #F5F5F5;
+  }
+  .el-table__body-wrapper::-webkit-scrollbar,.el-form::-webkit-scrollbar
+  {
+    width: 6px;
+    background-color: #F5F5F5;
+  }
+
+  .el-table__body-wrapper::-webkit-scrollbar-thumb,.el-form::-webkit-scrollbar-thumb
+  {
+    background-color: #000000;
+  }
 </style>

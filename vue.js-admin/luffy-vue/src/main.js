@@ -23,9 +23,10 @@ Vue.use(ElementUI)
 Vue.use(VueResource)
 // http 栏截
 Vue.http.interceptors.push(function (request, next) {
-  request.url = 'http://localhost:8080/' + request.getUrl()
   var that = this
+  request.url = 'http://localhost:8080' + request.url
   that.loading = true
+
   next((response) => {
     that.loading = false
     if (response.body.code === 0) {
