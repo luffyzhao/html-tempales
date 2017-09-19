@@ -17,6 +17,13 @@ export default {
   components: {
     'header-box': Header,
     'content-left': Left
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      if (vm.$db.get('toKen') == null) {
+        vm.$router.push('/login')
+      }
+    })
   }
 }
 </script>

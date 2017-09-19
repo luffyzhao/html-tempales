@@ -5,6 +5,7 @@ import App from './App'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import VueResource from 'vue-resource'
+import Db from './assets/js/plugin/Db'
 import 'element-ui/lib/theme-default/index.css'
 
 import Login from './page/home/login.vue'
@@ -21,6 +22,9 @@ Vue.use(VueRouter)
 Vue.use(ElementUI)
 // 加载http请求
 Vue.use(VueResource)
+// 加载Db
+Vue.use(Db)
+
 // http 栏截
 Vue.http.interceptors.push(function (request, next) {
   var that = this

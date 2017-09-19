@@ -7,7 +7,7 @@
           <el-breadcrumb-item v-for="(item, index) in breadcrumb">{{item}}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
-      <div class="router-box-form">
+      <div class="router-box-form" v-loading.body="loading">
         <el-form ref="form" :model="form" label-width="80px">
           <fieldset>
             <legend>活动名称</legend>
@@ -92,6 +92,7 @@ export default {
   },
   data () {
     return {
+      loading: false,
       breadcrumb: ['表单'],
       form: {
         name: '',
@@ -102,10 +103,6 @@ export default {
         type: [],
         resource: '',
         desc: ''
-      },
-      formInline: {
-        user: '',
-        region: ''
       }
     }
   }

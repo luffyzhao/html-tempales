@@ -45,7 +45,10 @@ export default {
   name: 'header',
   methods: {
     clickMeView (command) {
-      this.$message('点击了' + command)
+      if (command === '退出') {
+        this.$db.clear()
+        this.$router.push('/login')
+      }
     }
   }
 }
