@@ -9,25 +9,22 @@
 
 <script>
 import TreeMenu from './treeMenu.vue'
-var data = [{
-  name: '首页面板',
-  link: '/main',
-  icon: 'el-icon-date'
-},
-{
-  name: '示例页面',
-  icon: 'el-icon-date',
-  children: [{
-    name: '示例表单',
-    link: '/form',
-    icon: 'el-icon-date'
-  },
-  {
-    name: '示例列表',
-    link: '/list',
-    icon: 'el-icon-date'
-  }]
-}]
+import Common from '../../assets/js/plugin/Common'
+
+let toTree = function (arr, parentId) {
+  let treeArr = []
+  for (let i in arr) {
+    let item = arr[i]
+    if (item.parent_id === parentId && item.level <= 2) {
+      let children = toTree(arr, item.id)
+      if (children.length > 0) {
+        item.children = children
+      }
+      treeArr.push(item)
+    }
+  }
+  return treeArr
+}
 
 export default {
   name: 'left',
@@ -35,6 +32,8 @@ export default {
     'tree-menu': TreeMenu
   },
   data () {
+    let rule = JSON.parse(Common.getStore('rule'))
+    let data = toTree(rule, 0)
     return {
       hidden: false,
       theModel: data

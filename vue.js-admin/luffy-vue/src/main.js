@@ -6,16 +6,11 @@ import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import VueResource from 'vue-resource'
 import Db from './assets/js/plugin/Db'
+import Common from './assets/js/plugin/Common'
 import 'element-ui/lib/theme-default/index.css'
-
 import Login from './page/home/login.vue'
-import Index from './page/home/index.vue'
-import List from './page/sample/list.vue'
-import Form from './page/sample/form.vue'
-import Main from './page/sample/main.vue'
 
 Vue.config.productionTip = false
-
 // 加载路由
 Vue.use(VueRouter)
 // 加载elementUi
@@ -30,7 +25,6 @@ Vue.http.interceptors.push(function (request, next) {
   var that = this
   request.url = 'http://localhost:8080' + request.url
   that.loading = true
-
   next((response) => {
     that.loading = false
     if (response.body.code === 0) {
@@ -49,21 +43,25 @@ const router = new VueRouter({
     path: '/login',
     name: 'login',
     component: Login
-  }, {
-    path: '/',
-    component: Index,
-    redirect: '/main',
-    children: [{
-      path: 'list',
-      component: List
-    }, {
-      path: 'form',
-      component: Form
-    }, {
-      path: 'main',
-      component: Main
-    }]
   }]
+})
+
+let token = Common.getStore('token')
+if (token) {
+  // 获取路由
+  Common.addRoutes(router)
+}
+
+// 路由权限验证
+router.beforeEach((to, from, next) => {
+  let pass = Common.validRouter(to)
+  if (pass === false) {
+    next({path: '/login'})
+  } else if (pass === null) {
+    next({path: '/error'})
+  } else {
+    next()
+  }
 })
 
 /* eslint-disable no-new */

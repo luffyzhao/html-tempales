@@ -16,7 +16,8 @@ export default {
   name: 'main',
   data () {
     return {breadcrumb: ['面板']}
-  }
+  },
+  methods: {}
 }
 </script>
 

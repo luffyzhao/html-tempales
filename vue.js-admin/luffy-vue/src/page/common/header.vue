@@ -47,7 +47,7 @@ export default {
     clickMeView (command) {
       if (command === '退出') {
         this.$db.clear()
-        this.$router.push('/login')
+        this.$router.push({path: '/login'})
       }
     }
   }

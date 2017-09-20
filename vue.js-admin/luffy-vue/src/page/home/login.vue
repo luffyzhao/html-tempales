@@ -33,22 +33,15 @@
 </template>
 
 <script>
+import Common from '../../assets/js/plugin/Common'
+
 export default {
   name: 'router',
-  beforeRouteEnter (to, from, next) {
-    next(vm => {
-      if (vm.$db.get('toKen') != null) {
-        vm.$router.push('/main')
-      }
-    })
-  },
   methods: {
     loginSubmit (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          // 登录
-          this.$db.set('toKen', 'adfade5df4qwe51cfa58s')
-          this.$router.push('/main')
+          Common.doLogin(this)
         } else {
           return false
         }

@@ -1,7 +1,7 @@
 <template>
 <li class="nav-li">
     <el-tooltip effect="dark" :content="model.name" placement="right">
-        <router-link v-if="!isFolder" :to="model.link" class="nav-li-item">
+        <router-link v-if="!isFolder" :to="model.path" class="nav-li-item">
             <div class="nav-icon"><i :class="model.icon"></i></div>
             <span>{{ model.name }}</span>
         </router-link>
