@@ -3,8 +3,7 @@ import Index from '../../../page/home/index.vue'
 
 export default {
   // 合并路由
-  assignRouter: function () {
-    let arr = JSON.parse(this.getStore('rule'))
+  assignRouter: function (arr) {
     let obj = PageConfigs.Rule
     let routerArr = []
     for (let i in arr) {
@@ -20,37 +19,9 @@ export default {
     }
     return PageConfigs.DefaultRule.concat(routerArr)
   },
-  // 权限验证
-  validRouter: function (to) {
-    if (to.path === '/login' && !this.isLogin()) {
-      return true
-    } else if (!this.isLogin()) {
-      return false
-    }
-    let assignRule = this.assignRouter()
-    for (let i in assignRule) {
-      if (assignRule[i] instanceof Object) {
-        if (assignRule[i].path === to.path) {
-          return true
-        }
-      }
-    }
-    return null
-  },
-  // 获取本地存储
-  getStore: function (key, context) {
-    let store = window.localStorage
-    let doc = document.documentElement
-    if (store) {
-      return store.getItem(key, context)
-    } else {
-      doc.load(context || 'default')
-      return doc.getAttribute(key) || ''
-    }
-  },
   // 添加路由
-  addRoutes: function (router) {
-    let assignRule = this.assignRouter()
+  addRoutes: function (router, rule) {
+    let assignRule = this.assignRouter(rule)
     router.addRoutes([{
       path: '/',
       component: Index,
@@ -102,12 +73,8 @@ export default {
       level: 3,
       parent_id: 3
     }]
-    vm.$db.set('rule', JSON.stringify(rule))
+    vm.$db.set('rule', rule)
     this.addRoutes(vm.$router)
     vm.$router.push('/main')
-  },
-  // 是否登录
-  isLogin: function (vm) {
-    return this.getStore('token')
   }
 }

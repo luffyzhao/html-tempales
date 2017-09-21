@@ -27,7 +27,6 @@
             
           </el-form>
       </div>
-      
       <div class="router-box-table">
           <el-table :data="list.page.data" height="100%" v-loading.body="loading">
             <el-table-column prop="date" label="日期">
@@ -42,11 +41,11 @@
             </el-table-column>
             <el-table-column prop="zip" label="邮编">
             </el-table-column>
-            <el-table-column label="操作" width="150">
+            <el-table-column label="操作" width="200">
               <template scope="scope">
-                <el-button type="text" size="small">查看</el-button>
-                <el-button type="text" size="small">编辑</el-button>
-                <el-button type="text" size="small">删除</el-button>
+                <el-button size="mini">查看</el-button>
+                <el-button size="mini">编辑</el-button>
+                <el-button size="mini" @click="deleteRow(scope.$index, list.page.data)">删除</el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -63,6 +62,8 @@
           :total="list.page.total">
         </el-pagination>
     </div>
+
+    
   </div>
 </template>
 <script>
@@ -75,6 +76,13 @@ export default {
     })
   },
   methods: {
+    deleteRow (index, rows) {
+      this.$confirm('确定删除？')
+        .then(_ => {
+          rows.splice(index, 1)
+        })
+        .catch(_ => {})
+    },
     handleSizeChange (val) {
       var that = this
       that.list.param.size = val
@@ -96,6 +104,7 @@ export default {
   },
   data () {
     return {
+      visible: false,
       breadcrumb: ['列表'],
       loading: false,
       list: {

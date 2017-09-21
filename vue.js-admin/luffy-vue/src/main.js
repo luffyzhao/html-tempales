@@ -38,7 +38,7 @@ Vue.http.interceptors.push(function (request, next) {
 })
 
 // 定义路由映射
-const router = new VueRouter({
+let router = new VueRouter({
   routes: [{
     path: '/login',
     name: 'login',
@@ -46,27 +46,43 @@ const router = new VueRouter({
   }]
 })
 
-let token = Common.getStore('token')
-if (token) {
-  // 获取路由
-  Common.addRoutes(router)
-}
-
-// 路由权限验证
-router.beforeEach((to, from, next) => {
-  let pass = Common.validRouter(to)
-  if (pass === false) {
-    next({path: '/login'})
-  } else if (pass === null) {
-    next({path: '/error'})
-  } else {
-    next()
-  }
-})
-
 /* eslint-disable no-new */
-new Vue({
+let vm = new Vue({
   router,
   template: '<App/>',
   components: { App }
 }).$mount('#app')
+
+// 路由权限验证
+router.beforeEach((to, from, next) => {
+  // 是否登录
+  let isLogin = function () {
+    return vm.$db.get('token')
+  }
+  if (to.path === '/login' && !isLogin()) {
+    // 没有登录是/login
+    return next()
+  } else if (!isLogin()) {
+    // 没有登录不是/login
+    return next({path: '/login'})
+  } else {
+    // 登录不是/login
+    let rule = vm.$db.get('rule')
+    let assignRule = Common.assignRouter(rule)
+    for (let i in assignRule) {
+      if (assignRule[i] instanceof Object) {
+        if (assignRule[i].path === to.path) {
+          return next()
+        }
+      }
+    }
+  }
+  return next({path: '/error'})
+})
+
+let token = vm.$db.get('token')
+if (token) {
+  let rule = vm.$db.get('rule')
+  // 获取路由
+  Common.addRoutes(router, rule)
+}

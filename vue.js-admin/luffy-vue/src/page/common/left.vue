@@ -9,7 +9,6 @@
 
 <script>
 import TreeMenu from './treeMenu.vue'
-import Common from '../../assets/js/plugin/Common'
 
 let toTree = function (arr, parentId) {
   let treeArr = []
@@ -32,7 +31,7 @@ export default {
     'tree-menu': TreeMenu
   },
   data () {
-    let rule = JSON.parse(Common.getStore('rule'))
+    let rule = this.$db.get('rule')
     let data = toTree(rule, 0)
     return {
       hidden: false,
