@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Http from '@/assets/js/vue-http'
+import Http from '@/http'
 
 export default {
   name: 'login',

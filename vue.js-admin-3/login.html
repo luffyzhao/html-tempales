@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>vue.admin.3</title>
+    <link rel="stylesheet" href="css/element-ui.min.css">
+    <link rel="stylesheet" href="css/luffyzhao.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="body"></div>
+        <div class="login">
+            <div class="logo">
+            </div>
+            <el-form ref="form" :model="form" :rules="rules">
+                <div class="item-input active">
+                    <div class="item-input-icon">
+                        <i class="iconfont icon-yonghu"></i>
+                    </div><div class="item-input-input">
+                        <el-form-item prop="username">
+                            <el-input v-model="form.username" placeholder="用户名"></el-input>
+                        </el-form-item>
+                    </div>
+                </div>
+                <div class="item-input">
+                    <div class="item-input-icon">
+                        <i class="iconfont icon-mima"></i>
+                    </div><div class="item-input-input">
+                        <el-form-item prop="password">
+                            <el-input v-model="form.password" type="password" placeholder="密码"></el-input>
+                        </el-form-item>
+                    </div>
+                </div>
+                <div class="item-input last">
+                    <el-checkbox>记住用户名和密码</el-checkbox>
+                </div>
+                <div class="item-input last button">
+                    <el-button type="success" @click="loginSubmit('form')">登录</el-button>
+                </div>
+            </el-form>
+        </div>
+    </div>
+</body>
+<!-- common js -->
+<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/vuex.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/element-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- custom js -->
+<script src="js/lib/http.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lib/store.js" type="text/javascript" charset="utf-8"></script>
+<script>
+new Vue({
+    el: '#app',
+    store: $store,
+    methods: {
+        loginSubmit(form) {
+            this.$refs[form].validate((valid) => {
+                if (valid) {
+                    this.doLogin()
+                } else {
+                    return false
+                }
+            })
+        },
+        doLogin() {
+            Http.login().then(response => {
+                console.log(response)
+            }).catch(err => {
+                console.log(err)
+            })
+        }
+    },
+    data: function() {
+        return {
+            form: {
+                username: '',
+                password: ''
+            },
+            rules: {
+                username: [
+                    { required: true, message: '请输入用户名', trigger: 'blur' },
+                    { pattern: /^[a-zA-Z][a-zA-Z0-9]{5,17}$/, message: '以字母开头,长度在6-18之间,只能包含字符,数字和下划线' }
+                ],
+                password: [
+                    { required: true, message: '请输入密码', trigger: 'blur' },
+                    { pattern: /^(\w){6,20}$/, message: '只能输入6-20个字母、数字、下划线' }
+                ]
+            }
+        }
+    }
+})
+</script>
+
+</html>

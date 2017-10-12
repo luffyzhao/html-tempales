@@ -1,30 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import RouterConfig from '@/config/router-config'
 Vue.use(Router)
-
-let pages = [{
-  path: '/example/list',
-  name: '示例列表'
-}, {
-  path: '/example/form1',
-  name: '示例表单'
-}, {
-  name: '首页面板',
-  path: '/index/main'
-}, {
-  name: '示例表单2',
-  path: '/example/form2'
-}]
-
 let childrens = []
-for (let i in pages) {
+let config = RouterConfig
+for (let i in config) {
   childrens.push({
-    path: pages[i].path,
+    path: config[i].path,
     meta: {auth: true},
-    name: pages[i].name,
-    component: () => import('@/components' + pages[i].path + '.vue')
+    name: config[i].name,
+    component: () => import('@/components' + config[i].path + '.vue')
   })
 }
+
 // 定义路由映射
 const router = new Router({
   routes: [{

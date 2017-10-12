@@ -11,7 +11,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import VueIconFont from 'vue-icon-font'
 import '@/assets/css/iconfont.css'
-// import '@/assets/js/vue-iconfont.js'
 
 Vue.use(VueIconFont)
 Vue.use(ElementUI)
@@ -29,3 +28,12 @@ export default {
   name: 'app'
 }
 </script>
+
+<style>
+html,body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+</style>

@@ -1,7 +1,21 @@
 <template>
-  <div>list</div>
+  <div>
+      <span @click="show">show</span>
+      <div v-loading.body="loading" style="height:1500px; width:500px"></div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    loading () {
+      return this.$store.state.loading.loading
+    }
+  },
+  methods: {
+    show () {
+      this.$store.commit('show')
+    }
+  }
+}
 </script>
