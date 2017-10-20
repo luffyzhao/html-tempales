@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+    <link rel="stylesheet" href="style/common.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="router-box">
+            <div class="router-box-top">
+                <el-form :inline="true" :model="form" label-width="80px" ref="form">
+                    <el-form-item label="审批人">
+                        <el-input v-model="form.user" placeholder="审批人"></el-input>
+                    </el-form-item>
+                    <el-form-item label="活动区域">
+                        <el-select v-model="form.region" placeholder="活动区域">
+                            <el-option label="区域一" value="shanghai"></el-option>
+                            <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button type="primary" @click="submitForm('form')">查询</el-button>
+                    </el-form-item>
+                </el-form>
+            </div>
+            <div class="router-box-center" v-bind:style="boxCenterStyle">
+                <el-table :data="list.data" border style="width: 100%;">
+                    <el-table-column prop="date" label="日期" width="180">
+                    </el-table-column>
+                    <el-table-column prop="name" label="姓名" width="180">
+                    </el-table-column>
+                    <el-table-column prop="address" label="地址">
+                    </el-table-column>
+                </el-table>
+            </div>
+            <div class="router-box-bottom">
+                <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="paginate.currentPage" :page-sizes="[100, 200, 300, 400]" :page-size="paginate.pageSize" layout="total, sizes, prev, pager, next, jumper" :total="paginate.total">
+                </el-pagination>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/vuex@2.0.0" type="text/javascript" charset="utf-8"></script>
+<script src="js/vuex/common.js" type="text/javascript" charset="utf-8"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/vue-amap/dist/index.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="js/libs/common.js"></script>
+<script>
+const vm = new Vue({
+    el: '#app',
+    data() {
+        return {
+            form: {},
+            list: [],
+            paginate: {
+                currentPage: 1,
+                total: 0,
+                pageSize: 100
+            },
+            boxCenterStyle: {}
+        }
+    },
+    mounted() {
+        this.boxCenterStyle = {
+            height: (document.body.clientHeight - ($store.getters.heights('router-box-top') + $store.getters.heights('router-box-bottom') + 20)) + 'px'
+        }
+    },
+    methods: {
+        submitForm(form) {
+    
+        },
+        resetForm(form) {
+            this.$refs[form].resetFields()
+        },
+        handleSizeChange(val) {
+            this.paginate.pageSize = val
+            this.onSubmit()
+        },
+        handleCurrentChange(val) {
+            if (this.paginate.currentPage !== val) {
+                this.paginate.currentPage = val
+                this.onSubmit()
+            }
+        }
+    }
+});
+
+vm.form = {
+    user: '',
+    region: ''
+}
+
+vm.submitForm = function(form) {
+    console.log(this.$refs[form])
+}
+</script>
+
+</html>

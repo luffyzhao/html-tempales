@@ -1,0 +1,108 @@
+html,body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#app{
+  height: 100%;
+}
+.router-box-top{
+        box-sizing: border-box;
+        /* border-bottom: 1px solid #E5E9F2; */
+        padding: 10px;
+    }
+    
+.router-box-top{
+    height: auto;
+    overflow: hidden;
+}
+
+.router-box{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  /* padding: 10px; */
+}
+.line {
+    text-align: center;
+}
+.router-box-center{
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #EFF2F7;
+}
+.router-box-center .el-form{
+    width: 650px;
+    box-sizing: border-box;
+    padding: 15px 10px;
+}
+.router-box-center-form .el-form{
+  overflow-y: auto;
+  height: 100%;
+}
+.router-box-center .el-form.el-form--inline{
+  width: 100%;
+}
+.router-box-center .el-form .el-form-item__label{
+  width: 120px;
+}
+.router-box-center .el-form.el-form--inline .el-form-item__label{
+  width: auto;
+}
+.router-box-center .el-form .el-form-item__label + .el-form-item__content{
+  margin-left: 120px;
+}
+.router-box-center .el-form.el-form--inline .el-form-item__label+ .el-form-item__content{
+  margin-left:auto;
+}
+.router-box-center .el-table{
+  height: 100%;
+}
+.router-box-center .el-table__body-wrapper{
+  height: -moz-calc(100% - 41px);
+  height: -webkit-calc(100% - 41px);
+  height: calc(100% - 41px);
+}
+
+.list-header-title{
+    line-height: 30px;
+    border: 1px solid #C0CCDA;
+    padding-left: 10px;
+    background: #8492A6;
+    color: #FFFFFF;
+    font-size: 12px;
+  }
+
+  .list-header-box{
+    padding: 10px
+  }
+
+  .upload-images{
+    display: inline-block;
+  }
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #20a0ff;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+  .avatar {
+    width: 178px;
+    height: 178px;
+    display: block;
+  }

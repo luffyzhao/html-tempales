@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+    <link rel="stylesheet" href="style/common.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="router-box">
+            <div class="router-box-center router-box-center-form">
+                <el-form :model="ruleForm" :inline="true" ref="ruleForm">
+                    <list-header title="主体信息">
+                        <el-form-item label="审批人">
+                            <el-input v-model="ruleForm.name" placeholder="审批人"></el-input>
+                        </el-form-item>
+                        <el-form-item label="有效范围">
+                            <el-date-picker v-model="ruleForm.value3" type="datetimerange" placeholder="选择时间范围"></el-date-picker>
+                        </el-form-item>
+                    </list-header>
+                    <list-header title="上传信息">
+                        <div class="upload-images">
+                        <el-upload action="http://www.baidu.com" class="avatar-uploader" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+                            <img v-if="ruleForm.imageUrl" :src="ruleForm.imageUrl" class="avatar">
+                            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                        </el-upload>
+                        </div>
+                    </list-header>
+                    <list-header title="地图">
+                        <el-col :span="24" style="height: 500px">
+                            <el-amap vid="amapDemo"></el-amap>
+                        </el-col>
+                    </list-header>
+                </el-form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/vuex@2.0.0" type="text/javascript" charset="utf-8"></script>
+<script src="js/vuex/common.js" type="text/javascript" charset="utf-8"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/vue-amap/dist/index.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script src="js/libs/common.js"></script>
+<script>
+
+// 初始化vue-amap
+VueAMap.initAMapApiLoader({
+  // 高德的key
+  key: '9798eb91fcdfd5a3e7b97aff38e9a3ee',
+  // 插件集合
+  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor']
+});
+
+
+const vm = new Vue({
+    el: '#app',
+    data () {
+        return {
+            ruleForm:{},
+            rules:{}
+        }
+    },
+    methods: {
+        handleAvatarSuccess(res, file) {
+            this.imageUrl = res.src
+            this.$emit('image-url', res)
+            this.loading = false
+        },
+        beforeAvatarUpload(file) {
+            this.loading = true
+            const isJPG = file.type === 'image/jpeg'
+            const isLt2M = file.size / 1024 / 1024 < 2
+            if (!isJPG) {
+                this.loading = false
+                this.$message.error('上传头像图片只能是 JPG 格式!')
+            }
+            if (!isLt2M) {
+                this.loading = false
+                this.$message.error('上传头像图片大小不能超过 2MB!')
+            }
+            return isJPG && isLt2M
+        },
+        submitForm (form) {
+
+        },
+        resetForm (form) {
+            this.$refs[form].resetFields()
+        }
+    }
+});
+
+vm.ruleForm = {
+    name: '',
+    value3: '',
+    imageUrl: '',
+    editor: ''
+}
+</script>
+
+</html>

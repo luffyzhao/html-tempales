@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+    <link rel="stylesheet" href="style/iframe.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="header float-row">
+            <a class="header-brand" to="/"></a>
+            <div class="header-right">
+                <el-dropdown trigger="click" @command="clickMeView">
+                    <span class="el-dropdown-link">
+                    Luffy Zhao <i class="caret"></i>
+                    </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item command="个人中心">
+                            个人中心
+                        </el-dropdown-item>
+                        <el-dropdown-item command="退出">
+                            退出
+                        </el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </div>
+            <div class="header-right">
+                <el-dropdown trigger="click" @command="clickMeView">
+                    <span class="el-dropdown-link">
+                    消息<el-badge class="mark el-dropdown-link-badge" :value="15" />
+                    </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item class="row" command="评论">
+                            评论
+                            <el-badge class="mark el-dropdown-link-badge" :value="12" />
+                        </el-dropdown-item>
+                        <el-dropdown-item class="row" command="回复">
+                            回复
+                            <el-badge class="mark el-dropdown-link-badge" :value="3" />
+                        </el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <div class="content-left-fold" @click="contentLeftVisibility"><i class="el-icon-menu"></i></div>
+                <ul class="content-left-nav">
+                    <left-menu v-for="item in menus" :model="item"></left-menu>
+                </ul>
+            </div>
+            <div class="content-right">
+                <el-tabs v-model="iframeTab" editable @tab-remove="removeTab">
+                  <el-tab-pane
+                    v-for="(item, index) in iframeTabs"
+                    :key="item.id"
+                    :label="item.name"
+                    :name="item.path"
+                  >
+                  <iframe :src="item.path" frameborder="0" style="width: 100%; height: 100%; display: inline;"></iframe>
+                  </el-tab-pane>
+                </el-tabs>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- 先引入 Vue -->
+<script src="https://unpkg.com/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/vuex@2.0.0" type="text/javascript" charset="utf-8"></script>
+<script src="js/vuex/iframe.common.js" type="text/javascript" charset="utf-8"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="js/libs/common.js"></script>
+
+<script>
+let toTree = function (arr, parentId) {
+  let treeArr = []
+  for (let i in arr) {
+    let item = arr[i]
+    if (item.parent_id === parentId) {
+      let children = toTree(arr, item.id)
+      if (children.length > 0) {
+        item.children = children
+      }
+      treeArr.push(item)
+    }
+  }
+  return treeArr
+}
+
+new Vue({
+    el: '#app',
+    computed: {
+      iframeTab: {
+        get () {
+          return $store.state.iframeTab
+        },
+        set (v) {
+          $store.state.iframeTab = v
+        }
+      },
+      iframeTabs: {
+        get () {
+          return $store.state.iframeTabs
+        },
+        set (v) {
+          $store.state.iframeTabs = v
+        }
+      },
+      menus () {
+        return toTree([{
+            "id": 4,
+            "parent_id": 2,
+            "path": "list.html",
+            "name": "示例列表",
+            "icon": "el-icon-date"
+          }, {
+            "id": 3,
+            "parent_id": 2,
+            "path": "form1.html",
+            "name": "示例表单",
+            "icon": "el-icon-date"
+          }, {
+            "id": 1,
+            "name": "首页面板",
+            "path": "index.html",
+            "icon": "el-icon-date",
+            "parent_id": 0
+          }, {
+            "id": 2,
+            "name": "示例页面",
+            "icon": "el-icon-date",
+            "parent_id": 0
+          }, {
+            "id": 10,
+            "name": "示例表单2",
+            "path": "form2.html",
+            "icon": "el-icon-date",
+            "parent_id": 2
+          }
+        ],0);
+      }
+    },
+    mounted () {
+      $store.commit('addIframeTab', this.menus[0])
+    },
+    methods: {
+        clickMeView(command) {
+        },
+        contentLeftVisibility (event) {
+          this.hidden = !this.hidden
+        },
+        removeTab (targetName) {
+          console.log(targetName)
+        }
+    }
+})
+</script>
+
+</html>

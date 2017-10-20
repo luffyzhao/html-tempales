@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_420746_miq9x5caxw9daemi.css">
+    <link rel="stylesheet" href="style/login.css">
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <div class="body"></div>
+            <div class="login">
+                <div class="logo">
+                </div>
+                <el-form ref="ruleForm" :model="ruleForm" :rules="rules">
+                    <div class="item-input active">
+                        <div class="item-input-icon">
+                            <i class="iconfont el-icon-my-yonghu"></i>
+                        </div><div class="item-input-input">
+                            <el-form-item prop="email">
+                                <el-input v-model="ruleForm.email" placeholder="用户名"></el-input>
+                            </el-form-item>
+                        </div>
+                    </div>
+                    <div class="item-input">
+                        <div class="item-input-icon">
+                            <i class="iconfont el-icon-my-yonghu"></i>
+                        </div><div class="item-input-input">
+                            <el-form-item prop="password">
+                                <el-input v-model="ruleForm.password" type="password" placeholder="密码"></el-input>
+                            </el-form-item>
+                        </div>
+                    </div>
+                    <div class="item-input last">
+                        <el-checkbox>记住用户名和密码</el-checkbox>
+                    </div>
+                    <div class="item-input last button">
+                        <el-button type="success" @click="submitForm('form')">登录</el-button>
+                    </div>
+                </el-form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/vuex@2.0.0" type="text/javascript" charset="utf-8"></script>
+<script src="js/vuex/common.js" type="text/javascript" charset="utf-8"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/vue-amap/dist/index.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="js/libs/common.js"></script>
+<script>
+const vm = new Vue({
+    el: '#app',
+    data () {
+        return {
+            ruleForm:{},
+            rules:{}
+        }
+    },
+    methods: {
+        submitForm (form) {
+
+        },
+        resetForm (form) {
+            this.$refs[form].resetFields()
+        }
+    }
+});
+</script>
+
+</html>
